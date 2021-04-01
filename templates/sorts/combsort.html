@@ -1,0 +1,42 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/combsort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Comb Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Comb Sort è un algoritmo di sorting simile al <a href="/bubblesort">Bubble Sort</a>. Migliora molto l'efficienza dell'algoritmo rimuovendo le "turtles", ovvero gli elementi minori posizionati
+alla fine della lista che rallentavano molto il Bubble Sort.
+</p>
+<p data-aos="fade-right">
+Nel Bubble Sort si comparavano solo elementi adiacenti tra loro, quindi con una distanza di 1. Nel Comb Sort, la distanza viene aumentato da un fattore <var>k </var> (generalmente con valore 1.3).
+La distanza inizialmente ha valore <var>n</var>. Per ogni iterazione, viene eseguito un Bubble Sort modificato usando il nuovo valore anzichè 1. Questa verrà poi successivamente divisa dal fattore <var>k</var>.
+</p>
+<p data-aos="fade-right">
+Questo procedimento viene eseguito finchè la distanza non arriva al valore di 1. A questo punto, si esegue un Bubble Sort normale, ma la maggior parte delle "turtles" saranno già state eliminate.
+</p>
+<p data-aos="fade-right">
+La sua complessità media dipende, oltre al numero di elementi della struttura, anche da un valore <var>p</var>, che rappresenta il numero totale di divisioni effettuate.
+</p>
+{% endblock %}
+
+{% block medio %}
+<span class="symbol">Ω</span>(n<sup>2</sup> / 2<sup>p</sup>)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+<span class="symbol">Θ</span>(n × log n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

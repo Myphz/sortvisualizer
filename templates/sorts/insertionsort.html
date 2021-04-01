@@ -1,0 +1,36 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/insertionsort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Insertion Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+L'Insertion Sort è un algoritmo di sorting iterativo che modifica la struttura dati in-place, senza creare strutture ausiliari.
+È meno efficiente di algoritmi più avanzati, ma può comunque avere qualche vantaggio: è semplice da implementare ed è efficiente per strutture quasi ordinate.
+</p>
+<p data-aos="fade-right">
+L'algoritmo divide la struttura dati in due parti: una ordinata, e una ancora da ordinare. Inizialmente la struttura ordinata è composta da 1 solo elemento
+e viene progressivamente riempita. Per ogni iterazione, l'algoritmo rimuove un elemento dalla parte da ordinare e lo inserisce al giusto posto nella sottosequenza ordinata.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n × log n)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n × log n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

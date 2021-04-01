@@ -1,0 +1,38 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/shakersort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Shaker Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Lo Shaker Sort, anche detto Cocktail Shaker Sort, è un'estensione del <a href="/bubblesort">Bubble Sort</a>. A differenza del Bubble Sort, che ad ogni ciclo
+porta l'elemento maggiore alla fine della parte di struttura non ordinata, lo Shaker Sort alterna i cicli in cui porta l'elemento maggiore della parte di struttura non ordinata
+alla fine della stessa e cicli in cui porta l'elemento minore della parte di struttura non ordinata all'inizio della stessa.
+</p>
+<p data-aos="fade-right">
+Lo Shaker Sort quindi alterna due Bubble Sort, il primo che ordina la struttura partendo dall'elemento maggiore ordinando
+gli elementi fino al minore, e uno che parte dall'elemento minore e ordina gli elementi fino al maggiore. Anche se questo algoritmo è un estensione
+del Bubble Sort e a primo impatto potrebbe sembrare molto più efficente, l'incremento di prestazioni è minimo e la complessità è la stessa.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

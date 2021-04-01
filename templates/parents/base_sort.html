@@ -1,0 +1,113 @@
+{% extends "parents/base.html" %}
+
+{% block headtitle %}
+- {% block title %}{% endblock %}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_sort.css') }}">
+{% endblock %}
+
+{% block audio %}
+<button id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/base_sort.js') }}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+
+{% block js %}
+{% endblock %}
+
+<div>
+    <div id="box">
+        <div class="title" data-aos="fade-down">
+            {{ self.title() }}
+        </div>
+        <div style="float: right; width: 40%;">
+            <button class="sort-btns" id="shuffle-btn" onclick="shuffle()"><i class="material-icons">shuffle</i></button>
+            <button class="sort-btns" id="run-btn" onclick="run()" disabled><i class="material-icons">play_arrow</i></button>
+            <div class="slider-container">
+                <div style="display: float; text-align: center;">
+                    Elements: <span id="slider-span">50</span><br>
+                </div>
+                <input type="range" value="50" min="50" max="1000" step="50" name="item-num" id="slider" oninput="sliderChange()">
+            </div>
+        </div>
+        <br><br>
+
+        <div id="sort-container">
+        </div>
+
+    </div>
+</div>
+<div id="sort-cover">
+    <div class="info-parent">
+        <div class="sort-description">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIZIONE</div>
+            {% block info %}
+            {% endblock %}
+        </div>
+        <div class="table-box">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLESSITÀ</div>
+            <table class="sort-table" data-aos="flip-left">
+                <tr>
+                    <th>
+                        Complessità media
+                    </th>
+                    <td>
+                        {% block medio %}
+                        {% endblock %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Caso migliore
+                    </th>
+                    <td>
+                        {% block migliore %}
+                        {% endblock %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Caso peggiore
+                    </th>
+                    <td>
+                        {% block peggiore %}
+                        {% endblock %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Complessità di spazio
+                    </th>
+                    <td>
+                        {% block memoria %}
+                        {% endblock %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="menu-box">
+        <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTAZIONI</div>
+        <div id="menu-code" data-aos="fade-right">
+            <div class="menu-btns">
+                <button>C</button>
+                <button>C++</button>
+                <button>Java</button>
+                <button>JavaScript</button>
+                <button>Python</button>
+            </div>
+            <div id="code-content">
+                <pre>
+                    <code id="code"></code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

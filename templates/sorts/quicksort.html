@@ -1,0 +1,41 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/quicksort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Quick Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Quick Sort è un algoritmo di ordinamento ricorsivo che funziona dividendo la struttura dati in partizioni più piccole
+e ordinando quest'ultime in modo ricorsivo fino al completo ordinamento della struttura.
+</p>
+<p data-aos="fade-right">
+Questa divisione viene fatta in base ad un elemento chiamato pivot:
+tutti gli elementi maggiori del pivot vengono messi a destra della struttura e quelli minori a sinistra creando così due partizioni.
+Lo stesso procedimento viene poi applicato alle due partizioni ricorsivamente.
+</p>
+<p data-aos="fade-right">
+Questa tecnica di partizionamento in base al pivot viene chiamata <a href="https://it.wikipedia.org/wiki/Divide_et_impera_(informatica)" target="_blank">Divide et Impera</a>.
+Risulta essere una strategia particolarmente efficace che rende il Quick Sort uno degli algoritmi più efficienti.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n × log n)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n × log n)
+{% endblock %}
+
+{% block memoria %}
+O(n)
+{% endblock %}

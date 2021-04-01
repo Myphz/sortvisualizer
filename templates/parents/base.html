@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sort visualizer {% block headtitle %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/base.css') }}">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        {% block head %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+        <div class="sidenav">
+            <a href="/" class="sidenav-title"><i class="material-icons icon">home</i> Home</a>
+            <div id="sep"></div>
+            <div class="sidenav-title"><i class="material-icons icon">sort</i> Sorts</div>
+            <div class="sidenav-subtitle">LOGARITMICI</div>
+            <a href="/quicksort" class="sidenav-element">Quick Sort</a>
+            <a href="/mergesort" class="sidenav-element">Merge Sort</a>
+            <a href="/heapsort" class="sidenav-element">Heap Sort</a>
+            <div class="sidenav-subtitle">QUADRATICI</div>
+            <a href="/bubblesort" class="sidenav-element">Bubble Sort</a>
+            <a href="/selectionsort" class="sidenav-element">Selection Sort</a>
+            <a href="/insertionsort" class="sidenav-element">Insertion Sort</a>
+            <a href="/gnomesort" class="sidenav-element">Gnome Sort</a>
+            <a href="/shakersort" class="sidenav-element">Shaker Sort</a>
+            <a href="/oddevensort" class="sidenav-element">Odd Even Sort</a>
+            <a href="/pancakesort" class="sidenav-element">Pancake Sort</a>
+            <div class="sidenav-subtitle">STRANI</div>
+            <a href="/bitonicsort" class="sidenav-element">Bitonic Sort</a>
+            <a href="/radixsort" class="sidenav-element">Radix Sort</a>
+            <a href="/shellsort" class="sidenav-element">Shell Sort</a>
+            <a href="/combsort" class="sidenav-element">Comb Sort</a>
+            <a href="/bogosort" class="sidenav-element" style="margin-bottom: 40px;">Bogo Sort</a>
+
+        </div>
+
+        <div class="topnav">
+            <button class="sidenav-btn topnav-element ripple"><i class="material-icons icon">menu</i></button>
+            <a href="/" class="topnav-element">SORT VISUALIZER</a>
+            {% block audio %} {% endblock %}
+        </div>
+        {% block content %}
+        {% endblock %}
+
+    </body>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content" style="margin-left:0;">
+                <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
+                &emsp;Odd Elof Larsson<br>
+                &emsp;Daniel Scanu<br>
+                &emsp;Tommaso Tovoli
+            </div>
+            <div class="footer-content">
+                <span class="footer-title">Contatti:</span><br>
+                &emsp;odd.larsson@itiscuneo.eu<br>
+                &emsp;daniel.scanu@itiscuneo.eu<br>
+                &emsp;tommaso.tovoli@itiscuneo.eu
+            </div>
+            <div class="footer-content">
+                <span class="footer-title">Reference:</span><br>
+                <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://github.com/Myphz/pcto" target="_blank">
+                    &emsp;<img src="{{url_for('static', filename='images/Github_icon.png')}}" title="GitHub">
+                    <span style="padding-left: 5px;">GitHub</span>
+                </a>
+
+                <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://it.wikipedia.org/wiki/Algoritmo_di_ordinamento" target="_blank">
+                    &emsp;<img src="{{url_for('static', filename='images/Wikipedia_icon.png')}}" title="Wikipedia">
+                    <span style="padding-left: 5px;">Wikipedia</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</html>

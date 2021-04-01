@@ -1,0 +1,37 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/radixsort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Radix Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Radix Sort è un algoritmo di sorting che non usa confronti. La sua complessità dipende, oltre al numero degli elementi, da un valore k che rappresenta la media del numero di cifre degli elementi.
+Ordina la struttura dati per posizione, partendo dalla cifra meno significativa (LSD) o più significativa (MSD) del numero.
+Divide gli elementi in gruppi, chiamati "bucket", pari alla base in cui sono rappresentati i numeri.
+</p>
+<p data-aos="fade-right">
+È un algoritmo di sorting particolare molto diverso dagli altri. Non si basa sul confronto, ma solo sulle cifre del numero. Per questo, è utilizzabile solo su numeri interi.
+Può essere più veloce di alcuni algoritmi logaritmici su strutture dati di grandi dimensioni, ma non è molto utilizzato per via delle sue limitazioni.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n × k)
+{% endblock %}
+
+{% block peggiore %}
+O(n × k)
+{% endblock %}
+
+{% block migliore %}
+O(n × k)
+{% endblock %}
+
+{% block memoria %}
+O(n)
+{% endblock %}

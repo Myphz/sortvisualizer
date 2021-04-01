@@ -1,0 +1,38 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/mergesort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Merge Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Merge Sort è un algoritmo di sorting che, come il <a href="/quicksort">Quick sort</a>, sfrutta la tecnica Divide et Impera.
+Può essere implementato ricorsivamente o iterativamente, rispettivamente con le tecniche di Top-Down e Bottom-Up.
+In questa pagina viene rappresentata la prima.
+</p>
+<p data-aos="fade-right">
+L'algoritmo divide a metà la struttura dati in modo ricorsivo fino a quando le sottosequenze contengono solo un elemento.
+A questo punto, le sottosequenze vengono ordinate e fuse tra loro.<br>
+Per fare questo, si seleziona ripetutamente l'elemento minimo delle due sottosequenze e lo si pone nella sequenza in uscita, che risulterà in fine ordinata.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n × log n)
+{% endblock %}
+
+{% block peggiore %}
+O(n × log n)
+{% endblock %}
+
+{% block migliore %}
+O(n × log n)
+{% endblock %}
+
+{% block memoria %}
+O(n)
+{% endblock %}

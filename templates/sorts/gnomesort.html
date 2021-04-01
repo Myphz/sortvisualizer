@@ -1,0 +1,36 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/gnomesort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Gnome Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Lo Gnome sort è un algoritmo di ordinamento molto simile all'<a href="/insertionsort">Insertion sort</a>. Lo Gnome sort funziona dividendo la struttura in due parti: una non ordinata e una ordinata.
+Ad ogni ciclo l'algoritmo prende il primo elemento della parte non ordinata e lo sposta attraverso swap successive alla posizione giusta nella parte ordinata.
+</p>
+<p data-aos="fade-right">
+La differenza principale rispetto all'Insertion Sort sta nel fatto che l'implementazione non richiede cicli annidati. Come l'insertion Sort, questo algortimo risulta essere particolarmente efficiente
+su strutture dati di piccole dimensioni quasi ordinate.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

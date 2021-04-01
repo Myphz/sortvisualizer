@@ -1,0 +1,39 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/heapsort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Heap Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+L'Heap Sort è un algoritmo di sorting iterativo che modifica la struttura dati in-place basandosi sull'ausilio di strutture dati ausiliarie, chiamate heap.
+È meno efficiente di algoritmi con la stessa complessità logaritmica, e non è indicato per strutture dati di piccole dimensioni.
+</p>
+<p data-aos="fade-right">
+L'heap è una struttura rappresentabile con un albero binario, in cui ogni nodo ha un valore maggiore o uguale a quello dei suoi figli. Di conseguenza,
+la radice avrà il valore massimo.
+</p>
+<p data-aos="fade-right">
+Inizialmente, la struttura viene ordinata per formare l'heap, poi viene progressivamente riordinata con un algoritmo simile al <a href="/selectionsort">Selection Sort</a>, a partire dagli elementi maggiori.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n × log n)
+{% endblock %}
+
+{% block peggiore %}
+O(n × log n)
+{% endblock %}
+
+{% block migliore %}
+O(n × log n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

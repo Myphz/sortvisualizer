@@ -1,0 +1,35 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/bogosort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Bogo Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Bogo Sort (anche chiamato Stupid Sort) è un algoritmo di sorting iterativo molto inefficiente. Il suo funzionamento consiste nel mescolare gli elementi della struttura dati casualmente
+e controllare se la struttura è ordinata. In caso negativo, ripetere questo procedimento.
+</p>
+<p data-aos="fade-right">
+Questo algoritmo è probabilistico. Si può dimostrare matematicamente che arriverà alla soluzione mediamente in circa <var>n x n!</var> iterazioni, mentre il caso peggiore non è misurabile.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n × n!)
+{% endblock %}
+
+{% block peggiore %}
+∞
+{% endblock %}
+
+{% block migliore %}
+O(n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

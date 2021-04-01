@@ -1,0 +1,50 @@
+{% extends "parents/base.html" %}
+{% block head %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+<div id="header"><span>SORT</span><br><span>VISUALIZER</span></div>
+<div id="cover">
+
+    <div id="description-box">
+        <h2 style="font-family: 'Electrolize', Courier, monospace;" data-aos="fade-down">
+            Algoritmi di sorting
+        </h2>
+        <div class="description-content">
+            <p data-aos="fade-left">Gli algoritmi di sorting sono usati per ordinare una struttura dati secondo una relazione d'ordine.</p>
+            <p data-aos="fade-right">
+            Questa operazione è una delle più importanti e diffuse in campo informatico.
+            Per molto tempo sono stati studiati nuovi metodi per rendere questa procedura sempre più veloce.
+            </p>
+            <p data-aos="fade-left">
+            Attualmente esistono centinaia di algoritmi diversi, ognuno con le sue caratteristiche specifiche.
+            Vengono classificati in base alla complessità di tempo e di spazio. <br><br>
+            Esse vengono rappresentate con le <a href="https://it.wikiversity.org/wiki/Complessit%C3%A0_asintotica" target="_blank">notazioni asintotiche</a>, usando le lettere O, <span class="symbol">Θ</span>, <span class="symbol">Ω</span>, che rappresentano
+            rispettivamente il limite asintotico superiore, il limite asintotico stretto, e il limite asintotico inferiore dell'algoritmo, specificando tra parentesi una espressione in funzione di
+            <code><var>n</var></code>, il numero di elementi della struttura dati.<br><br>
+            Esistono due gruppi principali in cui vengono suddivisi:
+            </p>
+            <ul>
+                <li data-aos="fade-right">Logaritmica<br>
+                La complessità è proporzionale al logaritmo in base 2 di <code><var>n</var></code>.<br>
+                Un esempio di algoritmo di sorting logaritmico è il Quick sort, con complessità O<code>(n × log n)</code>.<br><br>
+                </li>
+                <li data-aos="fade-left">Quadratica<br>
+                La complessità è proporzionale al quadrato di <code><var>n</var></code>.<br>
+                Un esempio di algoritmo di sorting quadratico è il Bubble sort, con complessità O<code>(n<sup>2</sup>)</code>.<br>
+                </li>
+            </ul>
+            <p data-aos="fade-right">
+            In questo sito presentiamo una visualizzazione grafica di alcuni di questi algoritmi.
+            </p>
+            <p data-aos="fade-left">
+            In ogni pagina è presente un simulatore che ti permette di mischiare la struttura dati e successivamente ordinarla con l'algoritmo scelto,
+            con a seguire una breve descrizione del suo funzionamento e implementazioni in vari linguaggi di programmazione.
+            </p>
+            <button id="sort-btn" class="ripple-sort-btn">SORTS</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

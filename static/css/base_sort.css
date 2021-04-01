@@ -1,0 +1,337 @@
+body {
+    background: url(sortbg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.title {
+    margin-left: 50px;
+    float: left;
+    margin-top: 0px;
+    position: relative;
+    white-space: nowrap;
+    font-size: 100px;
+    color: white;
+    font-family: 'Electrolize', sans-serif;
+    transition: 1.5s;
+}
+
+@media only screen and (max-width: 1300px) {
+    .title {
+        font-size: 70px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .title {
+        font-size: 60px;
+    }
+}
+
+#box {
+    padding-top: 50px;
+    margin-top: 25px;
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 90%;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.info {
+    position: relative;
+    top: 50px;
+}
+
+#sort-list {
+    margin: 30px;
+    background-color: rgb(175, 171, 171);
+    font: inherit;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.slider-container {
+    float: left;
+    margin-top: 23px;
+    margin-left: 31px;
+    color: white;
+}
+
+#slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 442px; /* Full-width */
+    height: 5px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 0;
+    width: 10px; /* Set a specific slider handle width */
+    height: 30px; /* Slider handle height */
+    background: white; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    transition: 0.2s;
+}
+
+#slider::-moz-range-thumb {
+    border-radius: 0;
+    width: 10px; /* Set a specific slider handle width */
+    height: 30px; /* Slider handle height */
+    background: white; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    transition: 0.2s;
+}
+
+#slider::-moz-range-thumb:hover {
+    height: 35px;
+}
+
+#slider::-webkit-slider-thumb:hover {
+    height: 35px;
+}
+
+.sort-btns {
+    color: white;
+    margin-left: 0px;
+    margin-right: 15px;
+    margin-top: 35px;
+    background: none;
+    float: left;
+    border: none;
+    outline: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.sort-btns i {
+    border-radius: 7px;
+    background-color: #272727;
+    font-size: 70px !important;
+    transition: 0.2s;
+}
+
+.sort-btns:enabled i:hover {
+    font-size: 80px !important;
+    background: #161616;
+}
+
+.sort-btns:disabled i {
+    color: #3d3d3d !important;
+}
+
+@media only screen and (max-height:1080px) {
+    .sort-btns i {
+        font-size: 55px !important;
+    }
+    .sort-btns:enabled i:hover {
+        font-size: 65px !important;
+    }
+
+    #slider {
+        width: 300px;
+    }
+}
+
+#sort-container {
+    position: relative;
+    margin: 50px 30px 0px 0px;
+    height: 78vh;
+    width: 100%;
+}
+
+.element {
+    padding-right: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5%;
+    height: 10%;
+    background: linear-gradient(0deg, rgba(22,22,22,1) 5%, rgba(210,210,210,1) 100%);
+}
+
+.element-red {
+    background: linear-gradient(0deg, rgba(22,22,22,1) 5%, rgba(255,0,0,1) 100%);
+}
+
+.element-blue {
+    background: linear-gradient(0deg, rgba(22,22,22,1) 5%, rgba(0,39,255,1) 100%);
+}
+
+.element-green {
+    background: linear-gradient(0deg, rgba(22,22,22,1) 5%, rgba(16,140,30,1) 100%);
+}
+
+#sort-cover {
+    position: relative;
+    background: linear-gradient(180deg, rgba(22,22,22,1) 50%, rgba(27,27,27,1) 60%, rgba(36,36,36,1) 70%, rgba(70,70,70,1) 100%);
+    min-height: 170vh;
+    width: 100%;
+    display: block;
+    overflow: auto;
+}
+
+.info-parent {
+
+    width: 100%;
+    display: inline-block;
+    margin-top: 50px;
+    color:white;
+}
+
+.sort-description {
+    font-size: 28px;
+    margin-left: 7%;
+    float: left;
+    max-width: 50%;
+    text-align: justify;
+}
+
+.sort-description a:visited {
+    color: #d17f3f;
+}
+
+.sort-description a {
+    color: #d17f3f;
+}
+
+.table-box {
+    margin-right: 7%;
+    float: right;
+    text-align: left;
+}
+
+.sort-table {
+    margin-top: 30px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border-style: hidden;
+}
+
+.sort-table tr {
+    border: 2px solid #d17f3f;;
+}
+
+.sort-table th {
+    border-right: 2px solid #d17f3f;
+}
+
+.sort-table th, td {
+    padding: 10px;
+}
+
+.menu-box {
+    margin-top: 80px;
+    margin-left: 7%;
+    margin-bottom: 50px;
+    color: white;
+}
+
+#menu-code {
+    margin-top: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    position: relative;
+    background-color: rgb(22, 22, 22);
+    min-width: 50%;
+    display: inline-block;
+    border: 2px solid #d17f3f;
+    min-height: 70vh;
+}
+
+.menu-btns {
+    width: 100%;
+    height: 50px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.menu-btns button {
+    color: inherit;
+    font-size: 20px;
+    height: inherit;
+    width: 20%;
+    float: left;
+    border:none;
+    border-right: 2px solid #d17f3f;
+    border-bottom: 2px solid #d17f3f;
+    background-color: rgb(53, 53, 53);
+    outline: none;
+    transition: 0.2s;
+}
+
+.menu-btns button:first-child {
+    border-top-left-radius: 10px;
+}
+
+.menu-btns button:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+
+.menu-btns button:hover {
+    font-size: 28px;
+}
+
+.menu-btns-activated {
+    background-color: rgb(22, 22, 22) !important;
+    font-size: 28px !important;
+    border-bottom: none !important;
+}
+
+#code {
+    overflow: hidden;
+}
+
+#code-content pre {
+    margin: 10px;
+}
+
+.hljs {
+    background: rgb(22, 22, 22);
+    color: white;
+}
+
+.hljs-keyword {
+    color: #00FFFF;
+    font-style: oblique;
+}
+
+.hljs-built_in {
+    color: #00FFFF;
+}
+
+.hljs-title {
+    color: #f8cf74;
+}
+
+.hljs-number {
+    color: rgb(216, 89, 228)
+}
+
+.hljs-meta {
+    color: #d44170;
+}

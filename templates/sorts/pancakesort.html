@@ -1,0 +1,36 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/pancakesort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Pancake Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Pancake Sort è un algoritmo di sorting che deriva dal problema del pancake. Questo algoritmo esegue solo l'operazione del capovolgimento ricorsivamente, finchè la struttura non è ordinata.
+È simile al <a href="/selectionsort">Selection Sort</a>, ma a differenza di quest'ultimo non usa swap per ordinare la struttura, ma solo flip.
+</p>
+<p data-aos="fade-right">
+La struttura dati viene divisa in due parti, una ordinata e una ancora da ordinare. Per ogni ribaltazione, si sceglie l'elemento maggiore della parte non ordinata e lo si pone
+alla fine della struttura dati capovolgendo la parte non ordinata, e si incrementa la parte ordinata di uno. Questo procedimento si ripete finchè la parte non ordinata non sarà composta da un solo elemento.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

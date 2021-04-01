@@ -1,0 +1,39 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/oddevensort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Odd Even Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+L'Odd Even Sort (anche conosciuto come Brick Sort) è un algoritmo di sorting iterativo basato su confronti. Divide la struttura dati in elementi di indici pari
+e dispari e compara tutte le coppie adiacenti. </p>
+<p data-aos="fade-right">
+Se la coppia è nell'ordine sbagliato, gli elementi vengono scambiati, con un algoritmo simile a quello del <a href="/bubblesort">Bubble Sort</a>.
+Questo procedimento continua per tutte le coppie, alternandosi tra coppie dispari/pari e pari/dispari finchè la struttura dati non è ordinata.
+</p>
+<p data-aos="fade-right">
+È un algoritmo creato per essere eseguito in parallelo, ma non trova molte applicazioni. Può essere performante nel caso la struttura dati sia già quasi ordinata, ma è molto lento nel caso in cui
+ci siano elementi minori alla fine della struttura dati, in quanto queste dovranno eseguire numerose iterazioni prima di essere messi al posto giusto.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}

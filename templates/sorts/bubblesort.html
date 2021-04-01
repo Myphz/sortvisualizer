@@ -1,0 +1,40 @@
+{% extends "parents/base_sort.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/bubblesort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Bubble Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Il Bubble Sort è un algoritmo di sorting che imita, come dice il nome, il movimento delle bolle nell'acqua gasata.
+Le bolle rappresentano gli elementi della struttura dati.
+</p>
+<p data-aos="fade-right">
+Le bolle più grosse arrivano in cima più in fretta delle bolle piccole, e questo algoritmo funziona nello stesso modo. L'algoritmo itera per tutta la struttura
+confrontando l'elemento attuale con il successivo e li scambia di posizione se il primo è maggiore del secondo.
+</p>
+<p data-aos="fade-right">
+È un algoritmo molto semplice da implementare, ma poco performante: in media, algoritmi quadratici con la stessa complessità come <a href="/selectionsort">Selection Sort</a> o <a href="/insertionsort">Insertion Sort</a> sono più efficienti.<br>
+È presente in numerose varianti più efficaci, come lo <a href="/shakersort">Shaker Sort</a>, <a href="/oddevensort">Odd Even Sort</a> e <a href="/combsort">Comb Sort</a>.
+</p>
+{% endblock %}
+
+{% block medio %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block peggiore %}
+O(n<sup>2</sup>)
+{% endblock %}
+
+{% block migliore %}
+O(n)
+{% endblock %}
+
+{% block memoria %}
+O(1)
+{% endblock %}
