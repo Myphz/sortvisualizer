@@ -30,6 +30,7 @@ body {
 @media only screen and (max-width: 850px) {
     #header {
         font-size: 10vw;
+        margin-right: 10%;
     }
 }
 
