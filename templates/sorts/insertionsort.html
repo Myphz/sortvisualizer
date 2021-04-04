@@ -10,12 +10,13 @@ Insertion Sort
 
 {% block info %}
 <p data-aos="fade-right">
-L'Insertion Sort è un algoritmo di sorting iterativo che modifica la struttura dati in-place, senza creare strutture ausiliari.
-È meno efficiente di algoritmi più avanzati, ma può comunque avere qualche vantaggio: è semplice da implementare ed è efficiente per strutture quasi ordinate.
+Insertion Sort is an iterative in-place sorting algorithm without creating auxiliary data structures.
+It's less performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to implement and it's efficient on small data structures almost sorted.
 </p>
 <p data-aos="fade-right">
-L'algoritmo divide la struttura dati in due parti: una ordinata, e una ancora da ordinare. Inizialmente la struttura ordinata è composta da 1 solo elemento
-e viene progressivamente riempita. Per ogni iterazione, l'algoritmo rimuove un elemento dalla parte da ordinare e lo inserisce al giusto posto nella sottosequenza ordinata.
+The algorithm divides the data structure in two sublists: a sorted one, and one still to sort. Initially, the sorted sublist is made up of just one element and it gets progressively filled.
+For every iteration, the algorithm removes the next element on the sublist still to sort and inserts it at the right place in the sorted sublist.
+It's available in several variants such as <a href="/gnomesort">Gnome Sort</a>.
 </p>
 {% endblock %}
 

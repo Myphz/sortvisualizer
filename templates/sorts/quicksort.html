@@ -10,17 +10,16 @@ Quick Sort
 
 {% block info %}
 <p data-aos="fade-right">
-Il Quick Sort è un algoritmo di ordinamento ricorsivo che funziona dividendo la struttura dati in partizioni più piccole
-e ordinando quest'ultime in modo ricorsivo fino al completo ordinamento della struttura.
+Quick Sort is a sorting algorithm based on dividing the structure in smaller partitions and sort them recursively until the data structure is ordered.
 </p>
 <p data-aos="fade-right">
-Questa divisione viene fatta in base ad un elemento chiamato pivot:
-tutti gli elementi maggiori del pivot vengono messi a destra della struttura e quelli minori a sinistra creando così due partizioni.
-Lo stesso procedimento viene poi applicato alle due partizioni ricorsivamente.
+This division in partitions is done based on an element, called pivot:
+all the elements bigger than the pivot get placed on the right side of the structure, the smaller ones to the left, creating two partitions.
+Next, this procedure gets applied recursively to the two partitions, and so on.
 </p>
 <p data-aos="fade-right">
-Questa tecnica di partizionamento in base al pivot viene chiamata <a href="https://it.wikipedia.org/wiki/Divide_et_impera_(informatica)" target="_blank">Divide et Impera</a>.
-Risulta essere una strategia particolarmente efficace che rende il Quick Sort uno degli algoritmi più efficienti.
+This partition technique based on a pivot is called <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" target="_blank">Divide and conquer</a>.
+It's a performant strategy also used by other sorting algorithms.
 </p>
 {% endblock %}
 

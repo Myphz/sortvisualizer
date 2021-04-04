@@ -10,12 +10,12 @@ Pancake Sort
 
 {% block info %}
 <p data-aos="fade-right">
-Il Pancake Sort è un algoritmo di sorting che deriva dal problema del pancake. Questo algoritmo esegue solo l'operazione del capovolgimento ricorsivamente, finchè la struttura non è ordinata.
-È simile al <a href="/selectionsort">Selection Sort</a>, ma a differenza di quest'ultimo non usa swap per ordinare la struttura, ma solo flip.
+Pancake Sort is a sorting algorithm which derives from the pancake problem. The algorithm just executes the flip operation recursively until the data structure is sorted.
+It's similar to <a href="/selectionsort">Selection Sort</a>, without using swaps to sort the structure, but just flips.
 </p>
 <p data-aos="fade-right">
-La struttura dati viene divisa in due parti, una ordinata e una ancora da ordinare. Per ogni ribaltazione, si sceglie l'elemento maggiore della parte non ordinata e lo si pone
-alla fine della struttura dati capovolgendo la parte non ordinata, e si incrementa la parte ordinata di uno. Questo procedimento si ripete finchè la parte non ordinata non sarà composta da un solo elemento.
+The data structure gets divided in two parts, a sorted one and one still to sort. For each flip, the maximum elements of the unsorted sublist gets put at the end of the data structure by
+flipping the unsorted part and the sorted sublist gets incremented by one. This procedure gets executed until the unsorted part is made up of just one element.
 </p>
 {% endblock %}
 
