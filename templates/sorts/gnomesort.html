@@ -10,12 +10,11 @@ Gnome Sort
 
 {% block info %}
 <p data-aos="fade-right">
-Lo Gnome sort è un algoritmo di ordinamento molto simile all'<a href="/insertionsort">Insertion sort</a>. Lo Gnome sort funziona dividendo la struttura in due parti: una non ordinata e una ordinata.
-Ad ogni ciclo l'algoritmo prende il primo elemento della parte non ordinata e lo sposta attraverso swap successive alla posizione giusta nella parte ordinata.
+Gnome Sort is a sorting algorithm really similar to <a href="/insertionsort">Insertion sort</a>. Gnome Sort is based on dividing the data structure in two sublists: a sorted one, and an unsorted one.
+For every cycle, the algorithm picks the first element of the unsorted sublist and moves it with successive swaps to the right position in the sorted sublist.
 </p>
 <p data-aos="fade-right">
-La differenza principale rispetto all'Insertion Sort sta nel fatto che l'implementazione non richiede cicli annidati. Come l'insertion Sort, questo algortimo risulta essere particolarmente efficiente
-su strutture dati di piccole dimensioni quasi ordinate.
+The main difference from the Insertion Sort is that the implementation doesn't require nested loops. Like the Insertion Sort, this algorithm is more efficient on small data structures almost sorted.
 </p>
 {% endblock %}
 
