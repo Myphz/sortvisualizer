@@ -26,7 +26,7 @@
         <div class="title" data-aos="fade-down">
             {{ self.title() }}
         </div>
-        <div style="float: right; width: 40%;">
+        <div style="float: right; white-space: nowrap;">
             <button class="sort-btns" id="shuffle-btn" onclick="shuffle()"><i class="material-icons">shuffle</i></button>
             <button class="sort-btns" id="run-btn" onclick="run()" disabled><i class="material-icons">play_arrow</i></button>
             <div class="slider-container">
@@ -36,9 +36,10 @@
                 <input type="range" value="50" min="50" max="1000" step="50" name="item-num" id="slider" oninput="sliderChange()">
             </div>
         </div>
-        <br><br>
 
-        <div id="sort-container">
+        <div style="clear: both; padding-top: 20px;">
+            <div id="sort-container">
+            </div>
         </div>
 
     </div>

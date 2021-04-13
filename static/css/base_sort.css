@@ -7,7 +7,7 @@ body {
 }
 
 .title {
-    margin-left: 50px;
+    margin-left: 5%;
     float: left;
     margin-top: 0px;
     position: relative;
@@ -61,16 +61,17 @@ body {
 }
 
 .slider-container {
-    float: left;
+    display: inline-block;
     margin-top: 23px;
-    margin-left: 31px;
+    margin-left: 20px;
     color: white;
 }
 
 #slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 442px; /* Full-width */
+    max-width: 450px;
+    width: 40vw;
     height: 5px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
@@ -105,12 +106,13 @@ body {
 }
 
 .sort-btns {
+    display: inline-block;
     color: white;
     margin-left: 0px;
-    margin-right: 15px;
+
+    margin-right: 10px;
     margin-top: 35px;
     background: none;
-    float: left;
     border: none;
     outline: none;
     -webkit-touch-callout: none; /* iOS Safari */
@@ -145,15 +147,25 @@ body {
     .sort-btns:enabled i:hover {
         font-size: 65px !important;
     }
+}
 
-    #slider {
-        width: 300px;
+@media only screen and (max-width:600px) {
+    .sort-btns i {
+        font-size: 50px !important;
+    }
+
+    .slider-container div {
+        font-size: 22px;
+    }
+
+    .sort-btns:enabled i:hover {
+        font-size: 55px !important;
     }
 }
 
 #sort-container {
     position: relative;
-    margin: 50px 30px 0px 0px;
+    margin: 0px 30px 0px 0px;
     height: 78vh;
     width: 100%;
 }
