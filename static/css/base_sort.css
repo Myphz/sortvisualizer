@@ -166,6 +166,7 @@ body {
     width: 5%;
     height: 10%;
     background: linear-gradient(0deg, rgba(22,22,22,1) 5%, rgba(210,210,210,1) 100%);
+    transition: 1s;
 }
 
 .element-red {
