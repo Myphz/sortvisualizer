@@ -218,9 +218,9 @@ body {
 
 @media only screen and (max-width: 1100px) {
     .sort-description {
-        max-width: 100%;
+        max-width: 95%;
         font-size: 17px;
-        margin-left: 1%;
+        margin-left: 5%;
     }
 }
 
@@ -233,6 +233,7 @@ body {
 }
 
 .table-box {
+    margin-left: 5%;
     margin-right: 7%;
     float: right;
     text-align: left;
