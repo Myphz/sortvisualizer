@@ -217,6 +217,13 @@ body {
     text-align: justify;
 }
 
+@media only screen and (max-width: 1100px) {
+    .sort-description {
+        font-size: 12px;
+        margin-left: 1%;
+    }
+}
+
 .sort-description a:visited {
     color: #d17f3f;
 }
