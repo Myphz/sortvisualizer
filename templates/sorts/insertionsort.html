@@ -10,18 +10,18 @@ Insertion Sort
 
 {% block info %}
 <p data-aos="fade-right">
-Insertion Sort is an iterative in-place sorting algorithm without creating auxiliary data structures.
+Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time.
 It's less performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to implement and it's efficient on small data structures almost sorted.
 </p>
 <p data-aos="fade-right">
 The algorithm divides the data structure in two sublists: a sorted one, and one still to sort. Initially, the sorted sublist is made up of just one element and it gets progressively filled.
-For every iteration, the algorithm removes the next element on the sublist still to sort and inserts it at the right place in the sorted sublist.
+For every iteration, the algorithm picks an element on the unsorted sublist and inserts it at the right place in the sorted sublist.
 It's available in several variants such as <a href="/gnomesort">Gnome Sort</a>.
 </p>
 {% endblock %}
 
 {% block medio %}
-O(n × log n)
+O(n<sup>2</sup>)
 {% endblock %}
 
 {% block peggiore %}
@@ -29,7 +29,7 @@ O(n<sup>2</sup>)
 {% endblock %}
 
 {% block migliore %}
-O(n × log n)
+O(n)
 {% endblock %}
 
 {% block memoria %}
