@@ -279,7 +279,7 @@ body {
 @media only screen and (max-width: 1100px) {
     #menu-code {
         font-size: 12px;
-        max-width: 95vw;
+        max-width: 90vw;
     }
 }
 
@@ -309,12 +309,6 @@ body {
     transition: 0.2s;
 }
 
-@media only screen and (max-width: 1100px) {
-    .menu-btns button {
-        font-size: 14px;
-    }
-}
-
 .menu-btns button:first-child {
     border-top-left-radius: 10px;
 }
@@ -332,6 +326,18 @@ body {
     background-color: rgb(22, 22, 22) !important;
     font-size: 28px !important;
     border-bottom: none !important;
+}
+
+@media only screen and (max-width: 1100px) {
+    .menu-btns button {
+        font-size: 14px;
+    }
+
+    .menu-btns-activated {
+        background-color: rgb(22, 22, 22) !important;
+        font-size: 20px !important;
+        border-bottom: none !important;
+    }
 }
 
 #code {
