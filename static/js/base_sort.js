@@ -12,7 +12,6 @@ var running = false;
 var audio = true;
 const audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 
-// Appena si carica la pagina, carica la box
 window.addEventListener("load", () => {
     fillBox();
     document.getElementById("audio").addEventListener("click", audioButton);
@@ -26,7 +25,6 @@ window.addEventListener("load", () => {
     loadCode(menu.children[0]);
 });
 
-// Chiamata al cambiare dello slider, cambia il testo degli item e chiama la fillBox
 function sliderChange() {
     running = false;
     let slider = document.getElementById("slider");
@@ -36,7 +34,6 @@ function sliderChange() {
     activateButtons();
 }
 
-// Crea gli elementi nella box
 function fillBox(value=document.getElementById("slider").value) {
     let box = document.getElementById("sort-container");
     let size = 100 / value;
@@ -55,14 +52,12 @@ function fillBox(value=document.getElementById("slider").value) {
     }
 }
 
-// Distrugge gli elementi della box
 function clearBox(box) {
     while (box.lastElementChild) {
         box.removeChild(box.lastElementChild);
     }
 }
 
-// Chiamata quando premi il bottone, itera per ogni div e lo swappa con un altro a caso
 async function shuffle() {
     running = true;
     disableButtons();
@@ -74,8 +69,6 @@ async function shuffle() {
     running = false;
 }
 
-// Swappa lo style left e la loro posizione nell'elements elements dati 2 indici. Aspetta delay alla fine
-// Frequenza tra 200 e 600
 async function swap(i, j, delay) {
     let freq = Math.floor(( (getHeight(i) + getHeight(j)) / 200) * (FREQ_MAX - FREQ_MIN) + FREQ_MIN);
     playNote(freq, NOTE_DURATION);
@@ -116,12 +109,10 @@ function getHeightElement(element) {
     return parseFloat(element.style.height.slice(0, -1));
 }
 
-// Controlla se l'elemento ad indice x è >= dell'elemento ad indice y
 function compare(x, y) {
     return getHeight(x) >= getHeight(y);
 }
 
-// Wrapper della chiamata al sort che regola le variabili di stato e i bottoni, chiama l'algoritmo di sorting e il controlLoop.
 async function runBtn(sort, ...args) {
     running = true;
     disableButtons();
@@ -132,13 +123,11 @@ async function runBtn(sort, ...args) {
     running = false;
 }
 
-// Chiamata quando clicchi sul bottone, setta la variabile di stato e rifilla tutta la box.
 function stop() {
     running = false;
     fillBox();
 }
 
-// Trasforma il play button in stop button e disabilita lo shuffle
 function disableButtons() {
     btn = document.getElementById("run-btn");
     btn.lastElementChild.innerHTML = 'stop'
@@ -147,7 +136,6 @@ function disableButtons() {
     document.getElementById("shuffle-btn").disabled = true;
 }
 
-// Trasforma lo stop button in un play button e riabilita lo shuffle
 function activateButtons() {
     btn = document.getElementById("run-btn");
     btn.lastElementChild.innerHTML = 'play_arrow'
@@ -170,7 +158,6 @@ function resetColors() {
     for (let i = 0; i < elements.length; i++) resetColor(i);
 }
 
-// Fa partire l'animazione verde alla fine del loop
 async function controlLoop() {
     let delay = SHUFFLE_DELAY/elements.length/2;
     let anim_length = parseInt(elements.length / 6);
@@ -189,12 +176,10 @@ async function controlLoop() {
     }
 }
 
-// Calcola la frequenza della nota per l'elelemento dell'indice i
 function calculateFreq(i) {
     return getHeight(i) / 100 * (FREQ_MAX - FREQ_MIN) + FREQ_MIN;
 }
 
-// Carica l'implementazione nel linguaggio scelto
 function loadCode(btn) {
     let lang = btn.innerHTML;
     let menu = document.getElementsByClassName("menu-btns")[0];
@@ -211,7 +196,6 @@ function loadCode(btn) {
     hljs.highlightAll();
 }
 
-// Attiva / disattiva l'audio e cambia la sua icona
 function audioButton() {
     let icons = {"volume_up": "volume_off", "volume_off": "volume_up"}
     audio = !audio;

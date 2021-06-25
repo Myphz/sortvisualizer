@@ -1,9 +1,9 @@
-var title = ["SORT", "VISUALIZER"];
+const title = ["SORT", "VISUALIZER"];
 
 window.addEventListener("load", () => {
     document.getElementById("sort-btn").addEventListener("click", openSidenav);
 
-    var header = document.getElementById("header");
+    let header = document.getElementById("header");
     header.children[0].innerHTML.split("").forEach((item, i) => {
         titleAnimation(0, item, i);
     });
