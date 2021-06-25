@@ -202,7 +202,6 @@ body {
 }
 
 .info-parent {
-
     width: 100%;
     display: inline-block;
     margin-top: 50px;
@@ -274,6 +273,12 @@ body {
     display: inline-block;
     border: 2px solid #d17f3f;
     min-height: 70vh;
+}
+
+@media only screen and (max-width: 1100px) {
+    #menu-code {
+        font-size: 14px;
+    }
 }
 
 .menu-btns {
