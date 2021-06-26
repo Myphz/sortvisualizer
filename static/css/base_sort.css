@@ -248,7 +248,7 @@ body {
 
 @media only screen and (max-width: 1100px) {
     .sort-table {
-        font-size: 17px;
+        font-size: 19px;
     }
 }
 
@@ -353,10 +353,8 @@ body {
         font-size: 14px;
     }
 
-    .menu-btns-activated {
-        background-color: rgb(22, 22, 22) !important;
-        font-size: 20px !important;
-        border-bottom: none !important;
+    .menu-btns button:last-child {
+        border-right: none;
     }
 }
 
