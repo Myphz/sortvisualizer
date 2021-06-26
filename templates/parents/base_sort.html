@@ -7,6 +7,7 @@
 {% block head %}
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_sort.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
 {% endblock %}
 
 {% block audio %}
@@ -97,11 +98,11 @@
         <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
         <div id="menu-code" data-aos="fade-right">
             <div class="menu-btns">
-                <button>C</button>
-                <button>C++</button>
-                <button>Java</button>
-                <button>JavaScript</button>
-                <button>Python</button>
+                <button><img src="{{url_for('static', filename='images/c_icon.png')}}" width="32" height="32" title="C" alt="C"></button>
+                <button><img src="{{url_for('static', filename='images/cpp_icon.png')}}" width="32" height="32" title="C++" alt="C++"></button>
+                <button><img src="{{url_for('static', filename='images/java_icon.png')}}" width="32" height="32" title="Java" alt="Java"></button>
+                <button><img src="{{url_for('static', filename='images/javascript_icon.png')}}" width="32" height="32" title="JavaScript" alt="JavaScript"></button>
+                <button><img src="{{url_for('static', filename='images/python_icon.png')}}" width="32" height="32" title="Python" alt="Python"></button>
             </div>
             <div id="code-content">
                 <pre>

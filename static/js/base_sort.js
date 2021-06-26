@@ -181,7 +181,7 @@ function calculateFreq(i) {
 }
 
 function loadCode(btn) {
-    let lang = btn.innerHTML;
+    let lang = btn.firstElementChild.title;
     let menu = document.getElementsByClassName("menu-btns")[0];
 
     for (let i = 0; i < menu.children.length; i++) {
