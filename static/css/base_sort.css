@@ -256,6 +256,10 @@ body {
     .sort-table {
         font-size: 19px;
     }
+
+    .table-box {
+        float: left;
+    }
 }
 
 .sort-table tr {
