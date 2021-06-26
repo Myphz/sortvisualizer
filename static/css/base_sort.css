@@ -20,7 +20,7 @@ body {
 
 @media only screen and (max-width: 1300px) {
     .title {
-        font-size: 70px;
+        font-size: 67px;
     }
 }
 
@@ -321,6 +321,15 @@ body {
     outline: none;
 }
 
+.menu-btns img {
+    transition: 0.2s;
+}
+
+.menu-btns button:hover img {
+    width: 40px;
+    height: 40px;
+}
+
 .menu-btns button:first-child {
     border-top-left-radius: 10px;
 }
@@ -329,18 +338,13 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-.menu-btns img {
-    transition: 0.2s;
-}
-
-.menu-btns img:hover {
-    width: 40px;
-    height: 40px;
-}
-
 .menu-btns-activated {
     background-color: rgb(22, 22, 22) !important;
     border-bottom: none !important;
+}
+
+.menu-btns-activated:last-child {
+    border-right: none !important;
 }
 
 .menu-btns-activated img {
