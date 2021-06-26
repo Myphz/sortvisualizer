@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request, send_from_directory
 
 app = Flask(__name__)
 
@@ -66,6 +66,12 @@ def comb_sort():
 @app.route("/pancakesort/")
 def pancake_sort():
     return render_template("sorts/pancakesort.html")
+
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 
 if __name__ == "__main__":
     app.run(debug=True)
