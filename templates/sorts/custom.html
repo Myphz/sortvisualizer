@@ -1,0 +1,19 @@
+{% extends "parents/base_custom.html" %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/bogosort.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Your Custom Sort
+{% endblock %}
+
+{% block info %}
+<p data-aos="fade-right">
+Here you can add your own sort!
+</p>
+<p data-aos="fade-right">
+Write the code in javascript. Create a function that takes the array of elements as a parameter and sorts it in-place.
+To access the value of each element, use the function getHeight(x), passing the index of the element as a parameter, or the function getHeightElement(element), giving the element as a parameter.
+</p>
+{% endblock %}

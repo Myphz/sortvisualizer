@@ -21,6 +21,11 @@ def {fname}():
 
     exec(fun)
 
+@app.route("/custom/", methods=["GET", "POST"])
+def yourcustom_sort():
+    return render_template("sorts/custom.html")
+
+
 @app.route('/sitemap.xml')
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])

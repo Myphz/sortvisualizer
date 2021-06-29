@@ -57,68 +57,18 @@
 <div id="sort-cover">
     <div class="info-parent">
         <div class="sort-description">
-            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIPTION</div>
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">INSTRUCTIONS</div>
             {% block info %}
             {% endblock %}
-        </div>
-        <div class="table-box">
-            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLEXITY</div>
-            <table class="sort-table" data-aos="flip-left">
-                <tr>
-                    <th>
-                        Average Complexity
-                    </th>
-                    <td>
-                        {% block medio %}
-                        {% endblock %}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        Best Case
-                    </th>
-                    <td>
-                        {% block migliore %}
-                        {% endblock %}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        Worst Case
-                    </th>
-                    <td>
-                        {% block peggiore %}
-                        {% endblock %}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        Space Complexity
-                    </th>
-                    <td>
-                        {% block memoria %}
-                        {% endblock %}
-                    </td>
-                </tr>
-            </table>
         </div>
     </div>
     <div class="menu-box">
         <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
-        <div id="menu-code" data-aos="fade-right">
-            <div class="menu-btns">
-                <button><img src="{{url_for('static', filename='images/c_icon.png')}}" width="32" height="32" title="C" alt="C"></button>
-                <button><img src="{{url_for('static', filename='images/cpp_icon.png')}}" width="32" height="32" title="C++" alt="C++"></button>
-                <button><img src="{{url_for('static', filename='images/java_icon.png')}}" width="32" height="32" title="Java" alt="Java"></button>
-                <button><img src="{{url_for('static', filename='images/javascript_icon.png')}}" width="32" height="32" title="JavaScript" alt="JavaScript"></button>
-                <button><img src="{{url_for('static', filename='images/python_icon.png')}}" width="32" height="32" title="Python" alt="Python"></button>
-            </div>
-            <div id="code-content">
-                <pre>
-                    <code id="code"></code>
-                </pre>
-            </div>
-        </div>
+        <form>
+            <input type="text" id="test" style="height: 30vh; width: 20vw;" autocomplete="off">
+            <button type="submit">submit</button>
+        </form>
+
     </div>
 </div>
 {% endblock %}
