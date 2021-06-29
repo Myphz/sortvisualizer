@@ -4,19 +4,20 @@ async function run() {
 
 async function oddEvenSort(list) {
   var sorted = false;
+  let delay = SORT_DELAY/elements.length;
   while (!sorted) {
     sorted = true;
     for (var i = 1; i < list.length - 1; i += 2) {
         if (!running) return;
       if (compare(i, i+1)) {
-        await swap(i, i + 1);
+        await swap(i, i + 1, delay);
         sorted = false;
       }
     }
     for (var i = 0; i < list.length - 1; i += 2) {
         if (!running) return;
       if (compare(i, i+1)) {
-        await swap(i, i+1);
+        await swap(i, i+1, delay);
         sorted = false;
       }
     }

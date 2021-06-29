@@ -3,7 +3,7 @@ async function run() {
 }
 
 async function combSort(data) {
-    let delay = SHUFFLE_DELAY / data.length;
+    let delay = SORT_DELAY / data.length;
     let length = data.length;
     let shrink = 1.3;
     let gap = length;

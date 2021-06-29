@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
     let slider = document.getElementById("slider");
     slider.parentNode.removeChild(slider);
     let container = document.getElementsByClassName("slider-container")[0];
-    container.innerHTML += '<input type="range" value="6" min="6" max="10" step="1" name="item-num" id="slider" oninput="sliderChangeBitonic()">'
+    container.innerHTML += '<input type="range" value="4" min="4" max="10" step="1" name="item-num" id="slider" oninput="sliderChangeBitonic()">'
     sliderChangeBitonic();
 })
 
@@ -34,7 +34,7 @@ async function run() {
 }
 
 async function bitonicSort(arr, n) {
-    let delay = SHUFFLE_DELAY / elements.length;
+    let delay = SORT_DELAY / elements.length;
     for (let k = 2; k <= n; k *= 2) {
         for (let j = Math.floor(k/2); j > 0; j = Math.floor(j/2)) {
             for (let i = 0; i < n; i++) {

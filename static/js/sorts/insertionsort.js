@@ -3,7 +3,7 @@ async function run() {
 }
 
 async function insertionSort(elements) {
-    let delay = SHUFFLE_DELAY/elements.length;
+    let delay = SORT_DELAY / elements.length;
     for (let i = 1; i < elements.length; i++) {
         if (!running) return;
         let j = i;

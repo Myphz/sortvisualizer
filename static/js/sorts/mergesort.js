@@ -29,7 +29,7 @@ async function mergeSort(arr, start, end) {
         arr[i+start].style.left = 100 / elements.length * (i+start) + "%";
         changeColor(i+start, RED);
         playNote(calculateFreq(i+start), NOTE_DURATION);
-        await sleep(SHUFFLE_DELAY/elements.length);
+        await sleep(SORT_DELAY/elements.length);
         resetColor(i+start);
     }
 }

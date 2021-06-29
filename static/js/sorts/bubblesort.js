@@ -3,11 +3,12 @@ async function run() {
 }
 
 async function bubbleSort(array) {
+    let delay = SORT_DELAY / elements.length;
     for (let i = 1; i < array.length; i++) {
         for (let j = 0; j < array.length-i; j++) {
             if (!running) return;
             if (compare(j, j+1)) {
-                await swap(j, j+1);
+                await swap(j, j+1, delay);
             }
         }
     }

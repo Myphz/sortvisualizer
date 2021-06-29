@@ -3,10 +3,11 @@ async function run() {
 }
 
 async function flip(arr, k) {
+    let delay = SORT_DELAY / elements.length;
     let left = 0;
     while (left < k) {
         if (!running) return;
-        await swap(left, k);
+        await swap(left, k, delay);
         k--;
         left++;
     }

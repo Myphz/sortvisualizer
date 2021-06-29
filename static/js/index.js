@@ -2,22 +2,26 @@ const title = ["SORT", "VISUALIZER"];
 
 window.addEventListener("load", () => {
     document.getElementById("sort-btn").addEventListener("click", openSidenav);
-
-    let header = document.getElementById("header");
-    header.children[0].innerHTML.split("").forEach((item, i) => {
-        titleAnimation(0, item, i);
-    });
-
-    header.children[2].innerHTML.split("").forEach((item, i) => {
-        titleAnimation(1, item, i);
-    });
+    document.getElementById("header").addEventListener("click", headerAnimation);
+    headerAnimation();
 });
 
 window.addEventListener('scroll', () => {
     document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
   }, false);
 
-async function titleAnimation(child, letter, i) {
+function headerAnimation() {
+    let header = document.getElementById("header");
+    header.children[0].innerHTML.split("").forEach((item, i) => {
+        letterAnimation(0, item, i);
+    });
+
+    header.children[2].innerHTML.split("").forEach((item, i) => {
+        letterAnimation(1, item, i);
+    });
+}
+
+async function letterAnimation(child, letter, i) {
     await sleep(Math.floor(Math.random() * 700) + 200);
     let rand = Math.floor(Math.random() * 10) + 8;
     let target = [];

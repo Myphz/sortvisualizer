@@ -4,7 +4,7 @@ async function run() {
 
 async function heapify(elements, length, i) {
     if (!running) return;
-    let delay = SHUFFLE_DELAY/elements.length;
+    let delay = SORT_DELAY / elements.length;
     let largest = i;
     let left = i * 2 + 1;
     let right = left + 1;
@@ -24,7 +24,7 @@ async function heapify(elements, length, i) {
 }
 
 async function heapSort(elements) {
-    let delay = SHUFFLE_DELAY/elements.length;
+    let delay = SORT_DELAY / elements.length;
     let length = elements.length;
     let i = Math.floor(length / 2 - 1);
     let k = length - 1;

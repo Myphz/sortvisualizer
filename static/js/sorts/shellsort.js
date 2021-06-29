@@ -4,6 +4,7 @@ async function run() {
 
 
 async function shellSort(arr) {
+    let delay = SORT_DELAY / elements.length;
     let n = arr.length;
     let interval = ~~(n / 2);
     let j;
@@ -20,7 +21,7 @@ async function shellSort(arr) {
                 changeColor(j, RED);
                 arr[j].style.left = 100 / elements.length * j + "%";
                 playNote(calculateFreq(j), NOTE_DURATION);
-                await sleep(SHUFFLE_DELAY/elements.length);
+                await sleep(delay);
                 resetColor(j);
                 j -= interval;
             }
@@ -28,7 +29,7 @@ async function shellSort(arr) {
             playNote(calculateFreq(j), NOTE_DURATION);
             arr[j].style.left = 100 / elements.length * j + "%";
             changeColor(j, BLUE);
-            await sleep(SHUFFLE_DELAY/elements.length);
+            await sleep(delay);
             resetColor(j);
         }
         interval = ~~(interval/2);

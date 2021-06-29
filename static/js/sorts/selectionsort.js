@@ -3,7 +3,7 @@ async function run() {
 }
 
 async function selectionSort(elements) {
-    let delay = SHUFFLE_DELAY/elements.length;
+    let delay = SORT_DELAY / elements.length;
     for (let i = 0; i < elements.length; i++) {
         let min = i;
         for (let j = i; j < elements.length; j++) {

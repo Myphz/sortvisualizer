@@ -3,6 +3,7 @@ async function run() {
 }
 
 async function radixBucketSort (arr) {
+    let delay = SORT_DELAY / elements.length;
     var idx1, idx2, idx3, len1, len2, radix, radixKey;
     var radices = {}, buckets = {}, num, curr;
     var currLen, radixStr, currBucket;
@@ -50,7 +51,7 @@ async function radixBucketSort (arr) {
             playNote(calculateFreq(idx1), NOTE_DURATION);
             idx1++;
             if (idx1 < arr.length) changeColor(idx1, RED);
-            await sleep(SHUFFLE_DELAY/arr.length);
+            await sleep(delay);
          }
        }
      }
