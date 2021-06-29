@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block audio %}
-<form action="{{url_for(self.title().lower().replace(' ', '_').strip())}}" method="post">
+<form action="{{url_for( self.title().lower().replace(' ', '').strip()[:-4] + '_sort' )}}" method="post">
     <button type="submit" id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
 </form>
 {% endblock %}
@@ -42,9 +42,9 @@
             <button class="sort-btns" id="run-btn" onclick="run()" disabled><i class="material-icons">play_arrow</i></button>
             <div class="slider-container">
                 <div style="display: float; text-align: center;">
-                    Elements: <span id="slider-span">25</span><br>
+                    Elements: <span id="slider-span">100</span><br>
                 </div>
-                <input type="range" value="25" min="25" max="1000" step="25" name="item-num" id="slider" oninput="sliderChange()">
+                <input type="range" value="100" min="10" max="1000" step="5" name="item-num" id="slider" oninput="sliderChange()">
             </div>
         </div>
 

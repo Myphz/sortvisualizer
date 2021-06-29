@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
     let slider = document.getElementById("slider");
     slider.parentNode.removeChild(slider);
     let container = document.getElementsByClassName("slider-container")[0];
-    container.innerHTML += '<input type="range" value="4" min="4" max="10" step="1" name="item-num" id="slider" oninput="sliderChangeBitonic()">'
+    container.innerHTML += '<input type="range" value="6" min="4" max="10" step="1" name="item-num" id="slider" oninput="sliderChangeBitonic()">'
     sliderChangeBitonic();
 })
 
