@@ -11,14 +11,24 @@
 {% endblock %}
 
 {% block audio %}
-<button id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
+<form action="{{url_for(self.title().lower().replace(' ', '_').strip())}}" method="post">
+    <button type="submit" id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
+</form>
 {% endblock %}
 
 {% block content %}
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/base_sort.js') }}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+<script>
+    let audio = '{{ audio }}';
+    audio = audio[0] == "T" ? 1 : 0;
+    audioButton(audio);
 
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 {% block js %}
 {% endblock %}
 
