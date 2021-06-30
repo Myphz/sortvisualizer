@@ -15,13 +15,13 @@ window.addEventListener("load", () => {
     fillBox();
     // document.getElementById("audio").addEventListener("click", audioButton);
 
-    let menu = document.getElementsByClassName("menu-btns")[0];
-    for (let i = 0; i < menu.children.length; i++) {
-        menu.children[i].addEventListener("click", () => {
-            loadCode(menu.children[i]);
-        })
-    }
-    loadCode(menu.children[0]);
+    // let men  u = document.getElementsByClassName("menu-btns")[0];
+    // for (let i = 0; i < menu.children.length; i++) {
+    //     menu.children[i].addEventListener("click", () => {
+    //         loadCode(menu.children[i]);
+    //     })
+    // }
+    // loadCode(menu.children[0]);
 });
 
 function sliderChange() {

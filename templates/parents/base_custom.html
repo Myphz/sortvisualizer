@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_sort.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/codemirror.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/theme/darcula.css') }}">
+<link rel="stylesheet" href="https://codemirror.net/addon/display/fullscreen.css">
 {% endblock %}
 
 {% block audio %}
@@ -20,6 +23,14 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/base_sort.js') }}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+<script src="{{ url_for('static', filename='js/codemirror.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fullscreen.js') }}"></script>
+<script src="{{ url_for('static', filename='js/mode/javascript/javascript.js') }}"></script>
+<script src="https://codemirror.net/addon/edit/matchbrackets.js"></script>
+<script src="https://codemirror.net/addon/edit/closebrackets.js"></script>
+<script src="https://codemirror.net/addon/hint/show-hint.js"></script>
+<script src="https://codemirror.net/addon/comment/comment.js"></script>
+
 <script>
     let audio = '{{ audio }}'[0] == "T" | 0;
     audioButton(audio);
@@ -64,11 +75,28 @@
     </div>
     <div class="menu-box">
         <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
-        <form>
-            <input type="text" id="test" style="height: 30vh; width: 20vw;" autocomplete="off">
-            <button type="submit">submit</button>
-        </form>
-
+        <div id="codeTest" style="width: 50%; border: 4px solid #242424; margin-top: 35px; border-radius: 5px;"></div>
     </div>
 </div>
+
+<script>
+    const editor = CodeMirror(document.getElementById("codeTest"), {
+        theme: "darcula",
+        lineNumbers: true,
+        lineWrapping: true,
+        matchBrackets: true,
+        autoCloseBrackets: true,
+        extraKeys: {
+            "F11": function(cm) {
+                console.log("lolll")
+              cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+            },
+
+            "Esc": function(cm) {
+              if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+            },
+            "Ctrl-/": "toggleComment",
+        }
+    });
+</script>
 {% endblock %}

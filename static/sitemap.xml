@@ -5,85 +5,84 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-
 <url>
-  <loc>http://www.sortvisualizer.com/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/quicksort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/quicksort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/mergesort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/mergesort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/heapsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/heapsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/bubblesort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/bubblesort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/selectionsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/selectionsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/insertionsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/insertionsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/gnomesort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/gnomesort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/shakersort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/shakersort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/oddevensort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/oddevensort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/pancakesort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/pancakesort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/bitonicsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/bitonicsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/radixsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/radixsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/shellsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/shellsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/combsort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/combsort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.sortvisualizer.com/bogosort/</loc>
-  <lastmod>2021-06-26T16:51:12+00:00</lastmod>
+  <loc>https://sortvisualizer.com/bogosort/</loc>
+  <lastmod>2021-06-30T08:52:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
