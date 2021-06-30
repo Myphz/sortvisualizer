@@ -75,12 +75,17 @@
     </div>
     <div class="menu-box">
         <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
-        <div id="codeTest" style="width: 50%; border: 4px solid #242424; margin-top: 35px; border-radius: 5px;"></div>
+        <div id="code-test"></div>
+        <button class="btn-code">TEST</button>
+        <div>
+            clicca submit per inviare il codice ai pirla
+        </div>
+        <button class="btn-code">SUBMIT</button>
     </div>
 </div>
 
 <script>
-    const editor = CodeMirror(document.getElementById("codeTest"), {
+    const editor = CodeMirror(document.getElementById("code-test"), {
         theme: "darcula",
         lineNumbers: true,
         lineWrapping: true,
@@ -88,7 +93,6 @@
         autoCloseBrackets: true,
         extraKeys: {
             "F11": function(cm) {
-                console.log("lolll")
               cm.setOption("fullScreen", !cm.getOption("fullScreen"));
             },
 
