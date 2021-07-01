@@ -1,3 +1,12 @@
+let run;
+
+function injectSort(code, entryPoint) {
+    eval(code);
+    run = async () => {
+        runBtn(eval(entryPoint), elements);
+    }
+}
+
 const editor = CodeMirror(document.getElementById("code-test"), {
     theme: "darcula",
     lineNumbers: true,
@@ -17,8 +26,15 @@ const editor = CodeMirror(document.getElementById("code-test"), {
 });
 
 window.addEventListener("load", () => {
-    let btn = document.getElementsByClassName("btn-code")[0];
-    btn.addEventListener("click", () => {
+    let btns = document.getElementsByClassName("btn-code");
+
+    btns[0].addEventListener("click", () => {
+        let code = editor.getValue();
+        let entryPoint = document.getElementById("entry-point").value;
+        injectSort(code, entryPoint);
+    })
+
+    btns[1].addEventListener("click", () => {
         fetch("/submit/", {
             method: "POST",
 
