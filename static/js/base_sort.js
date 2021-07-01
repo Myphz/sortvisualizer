@@ -13,9 +13,10 @@ const audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 
 window.addEventListener("load", () => {
     fillBox();
-    // document.getElementById("audio").addEventListener("click", audioButton);
+    document.getElementById("audio").addEventListener("click", audioButton);
+    updateAudioIcon();
 
-    // let men  u = document.getElementsByClassName("menu-btns")[0];
+    // let menu = document.getElementsByClassName("menu-btns")[0];
     // for (let i = 0; i < menu.children.length; i++) {
     //     menu.children[i].addEventListener("click", () => {
     //         loadCode(menu.children[i]);
@@ -86,7 +87,6 @@ function sleep(delay) {
 }
 
 function playNote(frequency, duration) {
-    console.log(audio);
     if (!audio) return;
     const oscillator = new OscillatorNode(audioCtx);
     const gainNode = new GainNode(audioCtx);
@@ -196,7 +196,16 @@ function loadCode(btn) {
     hljs.highlightAll();
 }
 
-function audioButton(state) {
+function audioButton() {
+    audio = document.getElementById("audio").firstElementChild.innerHTML === "volume_off" | 0;
+    updateAudioIcon();
+
+    fetch("/audio/", {
+        method: "PUT",
+    })
+}
+
+function updateAudioIcon() {
     let icons = ["volume_off", "volume_up"];
-    document.getElementById("audio").firstChild.innerHTML = icons[state];
+    document.getElementById("audio").firstChild.innerHTML = icons[audio | 0];
 }

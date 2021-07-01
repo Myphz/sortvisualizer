@@ -14,9 +14,7 @@
 {% endblock %}
 
 {% block audio %}
-<form action="{{url_for( self.title().lower().replace(' ', '').strip()[:-4] + '_sort' )}}" method="post">
-    <button type="submit" id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
-</form>
+<button type="submit" id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
 {% endblock %}
 
 {% block content %}
@@ -33,14 +31,7 @@
 
 <script>
     let audio = '{{ audio }}'[0] == "T" | 0;
-    audioButton(audio);
-
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
 </script>
-{% block js %}
-{% endblock %}
 
 <div>
     <div id="box">
@@ -84,23 +75,5 @@
     </div>
 </div>
 
-<script>
-    const editor = CodeMirror(document.getElementById("code-test"), {
-        theme: "darcula",
-        lineNumbers: true,
-        lineWrapping: true,
-        matchBrackets: true,
-        autoCloseBrackets: true,
-        extraKeys: {
-            "F11": function(cm) {
-              cm.setOption("fullScreen", !cm.getOption("fullScreen"));
-            },
-
-            "Esc": function(cm) {
-              if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
-            },
-            "Ctrl-/": "toggleComment",
-        }
-    });
-</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/customsort.js') }}"></script>
 {% endblock %}
