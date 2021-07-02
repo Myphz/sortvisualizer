@@ -3,7 +3,6 @@ async function run() {
 }
 
 async function gnomeSort(elements) {
-    let delay = SORT_DELAY / elements.length;
     let i = 1;
     let j = 2;
 
@@ -13,7 +12,7 @@ async function gnomeSort(elements) {
             i = j;
             j++;
         } else {
-            await swap(i-1, i, delay);
+            await swap(i-1, i);
             i--;
 
             if (i == 0) {

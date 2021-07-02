@@ -3,7 +3,6 @@ async function run() {
 }
 
 async function quickSort(array, left, right) {
-    let delay = SORT_DELAY/array.length;
     if (left < right) {
         let pivot = left;
         changeColor(pivot, RED);
@@ -25,10 +24,10 @@ async function quickSort(array, left, right) {
             }
             changeColor(pivot, RED);
             if (i < j) {
-				await swap(i, j, delay);
+				await swap(i, j);
             }
         }
-        await swap(pivot, j, delay);
+        await swap(pivot, j);
         resetColor(i);
         resetColor(j);
         resetColor(pivot);

@@ -4,13 +4,12 @@ async function run() {
 
 
 async function shakerSort(nums) {
-    let delay = SORT_DELAY / elements.length;
     let is_Sorted = true;
     while (is_Sorted) {
         for (let i = 0; i< nums.length - 1; i++) {
             if (!running) return;
             if (compare(i, i+1)) {
-                await swap(i, i+1, delay);
+                await swap(i, i+1);
                 is_Sorted = true;
             }
         }
@@ -23,7 +22,7 @@ async function shakerSort(nums) {
        for (let j = nums.length - 1; j > 0; j--){
            if (!running) return;
             if (compare(j-1, j)) {
-               await swap(j-1, j, delay);
+               await swap(j-1, j);
                is_Sorted = true;
             }
        }

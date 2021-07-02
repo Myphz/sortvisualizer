@@ -1,15 +1,17 @@
 {% extends "parents/base_custom.html" %}
 
 {% block title %}
-Your Custom Sort
+Custom Sort
 {% endblock %}
 
 {% block info %}
 <p data-aos="fade-right">
-Here you can add your own sort!
+    Implement and visualize your sort algorithm using the JavaScript programming language.
 </p>
 <p data-aos="fade-right">
-Write the code in javascript. Create a function that takes the array of elements as a parameter and sorts it in-place.
-To access the value of each element, use the function getHeight(x), passing the index of the element as a parameter, or the function getHeightElement(element), giving the element as a parameter.
+    Write an <i>asyncronous</i> function that takes an <code>Array</code> of <code>DOM element objects</code> as a parameter and type the entry point of the algorithm in the appropriate text field below.
+</p>
+<p data-aos="fade-right">
+    Sort the elements in-place, in ascending order using the <a href="/api" target="_blank">documented APIs</a> for the visualization.
 </p>
 {% endblock %}

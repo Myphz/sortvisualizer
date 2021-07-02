@@ -1,0 +1,18 @@
+#api-description-box {
+    margin: auto;
+    /* padding-right: 5vw; */
+    /* padding-left: 5vw; */
+    font-size: 25px;
+    max-width: 850px;
+    position: relative;
+}
+
+.description-content {
+    font-size: 22px;
+}
+
+.api-subtitle {
+    font-family: 'Electrolize', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+}

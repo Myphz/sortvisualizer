@@ -15,7 +15,7 @@ async function shellSort(arr) {
             temp = arr[i];
             j = i;
 
-            while (j >= interval && getHeight(j-interval) > getHeightElement(temp)) {
+            while (j >= interval && getValue(j-interval) > getValue(temp)) {
                 if (!running) return;
                 arr[j] = arr[j-interval];
                 changeColor(j, RED);

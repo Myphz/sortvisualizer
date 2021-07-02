@@ -24,7 +24,6 @@ function sliderChangeBitonic() {
 }
 
 function stopBitonic() {
-    console.log("si")
     running = false;
     fillBox(2**document.getElementById("slider").value);
 }
@@ -34,14 +33,13 @@ async function run() {
 }
 
 async function bitonicSort(arr, n) {
-    let delay = SORT_DELAY / elements.length;
     for (let k = 2; k <= n; k *= 2) {
         for (let j = Math.floor(k/2); j > 0; j = Math.floor(j/2)) {
             for (let i = 0; i < n; i++) {
                 if (!running) return;
                 let l = i ^ j;
                 if (l > i) {
-                    if ( ((i&k)==0) && (compare(i, l)) || (((i&k)!=0) && (!compare(i,l)))) await swap(i, l, delay);
+                    if ( ((i&k)==0) && (compare(i, l)) || (((i&k)!=0) && (!compare(i,l)))) await swap(i, l);
                 }
             }
         }

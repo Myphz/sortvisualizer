@@ -1,0 +1,83 @@
+{% extends "parents/base.html" %}
+{% block headtitle %}- API{% endblock%}
+{% block head %}
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/api.css') }}">
+<link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+{% endblock %}
+{% block content %}
+<div id="cover">
+    <div id="api-description-box">
+        <h2 style="font-family: 'Electrolize', Courier, monospace;">
+            API Documentation
+        </h2>
+        <div class="description-content">
+            <p>In the <a href="/customsort" target="_blank">Custom Sort</a> page, it's possible to implement a custom sort algorithm and visualize it using the following APIs.</p><br>
+            <p class="api-subtitle">
+                REQUIREMENTS
+            </p>
+            <p data-aos="fade-left">
+                <ul>
+                    <li>The code must be written using the JavaScript programming language and will get injected and executed in your browser.</li><br>
+                    <li>The main function must be <i>asyncronous</i> and it must accept one positional argument, representing an <code>Array of DOM element objects</code>.<br>
+                        It must sort the array in-place and return <code>undefined</code>.<br>
+                        If your function needs more parameters, create another function and use the main one as a wrapper to start the algorithm.</li><br>
+                    <li>The code mustn't use any kind of imports from external modules.</li><br>
+                    <li>The code can contain multiple functions and classes declarations.</li><br>
+                    <li>You must specify the algorithm's entry point (the main function) in the apposite text field.</li>
+                </ul><br>
+            </p>
+            <p class="api-subtitle">
+                VISUALIZATION FUNCTIONS
+            </p>
+            <p>
+                You can use the following functions to visualize the sorting algorithm. Asyncronous functions must be called using the <code>await</code> keyword.
+                <ul>
+                    <li><code>getValue(element)</code><br><br>
+                        Returns the numerical value associated with the <code>DOM object</code>.<br><br>
+
+                        <div style="display: flex; align-items: center;">
+                            <span style="margin-right: auto;">Parameters:</span>        <span style="margin-left: auto;"><code>element : <i>Number or DOM element</i></code></span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span style="margin-right: auto;">Returns:</span>           <span style="margin-left: auto;"><code>Number : <i>Value of the DOM element</i></code></span>
+                        </div>
+
+                    </li><br><br>
+
+                    <li><code><i>await</i> updateBox(elements, index)</code><br><br>
+                        Updates the visualization of the algorithm. Temporarily changes the color of the <code>DOM element</code> to red given its index and plays a sound if the index is specified.
+                        Call this function after every update in the elements array.<br><br>
+                        <div style="display: flex; align-items: center;">
+                            <span style="margin-right: auto;">Parameters:</span>        <span style="margin-left: auto;"><code>elements : <i>Array of DOM elements</i></code></span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                                                                                        <span style="margin-left: auto;"><code>index : <i>Number</i></code></span>
+                        </div><br>
+                        <div style="display: flex; align-items: center;">
+                            <span style="margin-right: auto;">Returns:</span>           <span style="margin-left: auto;"><code><i>undefined</i></code></span>
+                        </div>
+                    </li><br><br>
+
+                    <li><code><i>await</i> swap(index1, index2)</code><br><br>
+                        Swaps two <code>DOM elements</code> given their indices, with visualization. No need to call <code>await updateBox</code> after.<br><br>
+
+                        <div style="display: flex; align-items: center;">
+                            <span style="margin-right: auto;">Parameters:</span>        <span style="margin-left: auto;"><code>index1 : <i>Number</i></code></span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                                                                                        <span style="margin-left: auto;"><code>index2 : <i>Number</i></code></span>
+                        </div><br>
+                        <div style="display: flex; align-items: center;">
+                            <span style="margin-right: auto;">Returns:</span>           <span style="margin-left: auto;"><code><i>undefined</i></code></span>
+                        </div>
+
+                    </li><br><br>
+
+                </ul><br>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

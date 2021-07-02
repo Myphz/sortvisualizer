@@ -14,7 +14,7 @@ async function mergeSort(arr, start, end) {
 
     for (var i=start, r=0;i<mid;r++,i++) {
         if (!running) return;
-        while (k<end && getHeightElement(arr[k]) < getHeightElement(arr[i])) {
+        while (k<end && getValue(arr[k]) < getValue(arr[i])) {
             cache[r] = arr[k];
             r++;
             k++;

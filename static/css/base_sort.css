@@ -408,7 +408,7 @@ body {
 }
 
 #code-test {
-    width: 60vw;
+    width: 70vw;
     border: 2px solid #A86836;
     margin-top: 35px;
     border-radius: 5px;
@@ -427,4 +427,10 @@ body {
     border-radius: 5px;
     border: none;
     background-color: #d17f3f;
+}
+
+.cm-s-seti .CodeMirror-matchingbracket {
+    color: #2B8A3D !important;
+    text-decoration: none;
+    font-weight: 600;
 }

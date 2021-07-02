@@ -12,7 +12,7 @@ function openSidenav() {
 }
 
 window.onclick = function(event) {
-    const matches = ['#sort-btn', '.sidenav-btn', '.sidenav', '.sidenav-element', '.sidenav-title', ]
+    const matches = ['#sort-btn', '.sidenav-btn', '.sidenav', '.sidenav-element', '.sidenav-title']
 
     if (!(matches.some((match) => event.target.matches(match)))) {
         document.getElementsByClassName("sidenav")[0].classList.remove("show");

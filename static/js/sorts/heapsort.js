@@ -4,7 +4,6 @@ async function run() {
 
 async function heapify(elements, length, i) {
     if (!running) return;
-    let delay = SORT_DELAY / elements.length;
     let largest = i;
     let left = i * 2 + 1;
     let right = left + 1;
@@ -18,13 +17,12 @@ async function heapify(elements, length, i) {
     }
 
     if (largest != i) {
-        await swap(i, largest, delay);
+        await swap(i, largest);
         await heapify(elements, length, largest);
     }
 }
 
 async function heapSort(elements) {
-    let delay = SORT_DELAY / elements.length;
     let length = elements.length;
     let i = Math.floor(length / 2 - 1);
     let k = length - 1;
@@ -37,7 +35,7 @@ async function heapSort(elements) {
 
     while (k >= 0) {
         if (!running) return;
-        await swap(0, k, delay);
+        await swap(0, k);
         await heapify(elements, k, 0);
         k--;
     }

@@ -16,13 +16,14 @@ window.addEventListener("load", () => {
     document.getElementById("audio").addEventListener("click", audioButton);
     updateAudioIcon();
 
-    // let menu = document.getElementsByClassName("menu-btns")[0];
-    // for (let i = 0; i < menu.children.length; i++) {
-    //     menu.children[i].addEventListener("click", () => {
-    //         loadCode(menu.children[i]);
-    //     })
-    // }
-    // loadCode(menu.children[0]);
+    let menu = document.getElementsByClassName("menu-btns")[0];
+    if (typeof menu === "undefined") return;
+    for (let i = 0; i < menu.children.length; i++) {
+        menu.children[i].addEventListener("click", () => {
+            loadCode(menu.children[i]);
+        })
+    }
+    loadCode(menu.children[0]);
 });
 
 function sliderChange() {
@@ -70,7 +71,8 @@ async function shuffle() {
 }
 
 async function swap(i, j, delay) {
-    let freq = Math.floor(( (getHeight(i) + getHeight(j)) / 200) * (FREQ_MAX - FREQ_MIN) + FREQ_MIN);
+    if (typeof delay === "undefined") delay = SORT_DELAY / elements.length;
+    let freq = Math.floor(( (getValue(i) + getValue(j)) / 200) * (FREQ_MAX - FREQ_MIN) + FREQ_MIN);
     playNote(freq, NOTE_DURATION);
     if (!running) return;
     changeColor(i, RED);
@@ -101,16 +103,15 @@ function playNote(frequency, duration) {
     }, duration);
 }
 
-function getHeight(x) {
-    return parseFloat(elements[x].style.height.slice(0, -1));
-}
-
-function getHeightElement(element) {
-    return parseFloat(element.style.height.slice(0, -1));
+function getValue(i) {
+    if (typeof i === "object") {
+        return parseFloat(i.style.height.slice(0, -1))
+    }
+    return parseFloat(elements[i].style.height.slice(0, -1));
 }
 
 function compare(x, y) {
-    return getHeight(x) >= getHeight(y);
+    return getValue(x) >= getValue(y);
 }
 
 async function runBtn(sort, ...args) {
@@ -177,7 +178,7 @@ async function controlLoop() {
 }
 
 function calculateFreq(i) {
-    return getHeight(i) / 100 * (FREQ_MAX - FREQ_MIN) + FREQ_MIN;
+    return getValue(i) / 100 * (FREQ_MAX - FREQ_MIN) + FREQ_MIN;
 }
 
 function loadCode(btn) {

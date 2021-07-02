@@ -12,13 +12,13 @@ async function radixBucketSort (arr) {
     len2 = 10;
 
     for (idx1 = 0;idx1 < len1;idx1++) {
-     radices[(parseInt(getHeight(idx1)*10)).toString().length] = 0;
+     radices[(parseInt(getValue(idx1)*10)).toString().length] = 0;
     }
 
     for (radix in radices) {
      len1 = arr.length;
      for (idx1 = 0;idx1 < len1;idx1++) {
-       curr = parseInt(getHeight(idx1)*10);
+       curr = parseInt(getValue(idx1)*10);
        currLen = curr.toString().length;
        if (currLen >= radix) {
 

@@ -19,7 +19,7 @@ function sorted(arr) {
 async function shuffleBogo(arr) {
     for (let i = 0; i < elements.length; i++) {
         let rand_index = Math.floor(Math.random() * elements.length);
-        await swap(i, rand_index);
+        await swap(i, rand_index, 0);
     }
 }
 
