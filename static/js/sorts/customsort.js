@@ -34,12 +34,20 @@ function injectSort(code, entryPoint) {
     eval(code);
     customSort = async (elements) => {
         try {
+            document.getElementById("error").innerHTML = "";
             return await eval(entryPoint)(elements);
         } catch (e) {
             if (e instanceof SortError) {
                 console.log("lol hai stoppato");
             } else {
-                console.log(e)
+                const editorError = CodeMirror(document.getElementById("error"), {
+                    value: e.name + ":\n" + e.message,
+                    theme: "seti",
+                    lineNumbers: true,
+                    lineWrapping: true,
+                    matchBrackets: true,
+                });
+                location.href = '#error';
             }
         }
     }
@@ -96,6 +104,7 @@ const editor = CodeMirror(document.getElementById("code-test"), {
         "Ctrl-/": "toggleComment",
     }
 });
+
 
 window.addEventListener("load", () => {
     let btns = document.getElementsByClassName("btn-code");

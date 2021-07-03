@@ -414,19 +414,40 @@ body {
     border-radius: 5px;
 }
 
-.CodeMirror {
+#code-test > .CodeMirror {
     height: 70vh !important;
+}
+
+#entry-point {
+    height: 35px;
+    width: 30vw;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #151718;
+    outline: none;
+    border: 1px solid #d17f3f;
+    color: #c5d654;
+    font-size: 20px;
+    vertical-align: middle
 }
 
 .btn-code {
     font-family: 'Jura', Courier, monospace;
-    margin-top: 20px;
-    margin-bottom: 20px;
     font-size: 25px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    border: none;
+    border: 2px solid #ac6632;
     background-color: #d17f3f;
+    vertical-align: middle;
+    float: right;
+}
+
+#error {
+    margin-top: 30px;
+}
+
+#error > .CodeMirror {
+    height: 30vh !important;
 }
 
 .cm-s-seti .CodeMirror-matchingbracket {
