@@ -3,7 +3,7 @@ import base64
 import os
 
 GECKODRIVER_PATH = os.environ.get("GECKODRIVER_PATH")
-FIREFOX_PATH = os.environ.get("GECKODRIVER_PATH")
+FIREFOX_PATH = os.environ.get("FIREFOX_PATH")
 
 def get_img(msg):
 	options = webdriver.FirefoxOptions()
