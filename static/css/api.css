@@ -1,7 +1,5 @@
 #api-description-box {
     margin: auto;
-    /* padding-right: 5vw; */
-    /* padding-left: 5vw; */
     font-size: 25px;
     max-width: 850px;
     position: relative;
@@ -12,7 +10,7 @@
 }
 
 .api-subtitle {
-    font-family: 'Electrolize', Courier, monospace;
+    font-family: 'Electrolize', sans-serif;
     font-size: 24px;
     font-weight: bold;
 }

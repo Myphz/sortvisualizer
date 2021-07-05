@@ -1,46 +1,54 @@
-const title = ["SORT", "VISUALIZER"];
+const minDelay = 700;
+const maxDelay = 900;
 
-window.addEventListener("load", () => {
-    document.getElementById("sort-btn").addEventListener("click", openSidenav);
-    document.getElementById("header").addEventListener("click", headerAnimation);
-    headerAnimation();
-});
+const minLetters = 10;
+const maxLetters = 18;
 
-window.addEventListener('scroll', () => {
-    document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-  }, false);
+const delay = 75;
+
+const startAscii = 65;
+const endAscii = 91;
+
+const title = {
+    "first-header": "SORT",
+    "second-header": "VISUALIZER"
+};
+
+byId("header").onclick = headerAnimation;
+headerAnimation();
+
+function oneHeaderAnimation(whichId) {
+    byId(whichId).innerHTML.split("").forEach( (item, i) => {
+        letterAnimation(whichId, item, i);
+    }
+)}
 
 function headerAnimation() {
-    let header = document.getElementById("header");
-    header.children[0].innerHTML.split("").forEach((item, i) => {
-        letterAnimation(0, item, i);
-    });
-
-    header.children[2].innerHTML.split("").forEach((item, i) => {
-        letterAnimation(1, item, i);
-    });
+    oneHeaderAnimation('first-header');
+    oneHeaderAnimation('second-header');
 }
 
 async function letterAnimation(child, letter, i) {
-    await sleep(Math.floor(Math.random() * 700) + 200);
-    let rand = Math.floor(Math.random() * 10) + 8;
+    await sleep(Math.floor(Math.random() * minDelay) + maxDelay - minDelay);
+    let rand = Math.floor(Math.random() * minLetters) + maxLetters - minLetters;
     let target = [];
+
     for (let k = 0; k < rand; k++) target.push(randomLetter());
+
     target.push(title[child][i]);
+
     for (let j = 0; j < target.length; j++) {
         changeLetter(child, target[j], i);
-        await sleep(75);
+        await sleep(delay);
     }
 }
 
 function randomLetter() {
-    return String.fromCharCode(65+Math.floor(Math.random() * 26));
+    return String.fromCharCode(startAscii + Math.floor(Math.random() * (endAscii - startAscii)));
 }
 
 function changeLetter(child, repl, i) {
-    if (child == 1) child = 2;
-    let header = document.getElementById("header");
-    child = header.children[child];
+    child = byId(child);
     let temp = child.innerHTML;
     child.innerHTML = temp.substr(0, i) + repl + temp.substr(i+1);
 }

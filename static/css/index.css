@@ -7,7 +7,7 @@ body {
 }
 
 #header {
-    font-family: 'Oxygen', Courier, monospace;
+    font-family: 'Oxygen', monospace, Courier;
     color: white;
     padding-right: 15px;
     margin-right: 20%;
@@ -35,7 +35,7 @@ body {
 }
 
 #cover {
-    font-family: 'Ubuntu', Courier, monospace;
+    font-family: 'Ubuntu', monospace, Courier;
     position: relative;
     width: 100%;
     margin-top: 30vh;

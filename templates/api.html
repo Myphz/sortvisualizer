@@ -34,7 +34,7 @@
                 You can use the following functions to visualize the sorting algorithm. Asyncronous functions must be called using the <code>await</code> keyword.
                 <ul>
                     <li><code>getValue(element)</code><br><br>
-                        Returns the numerical value associated with the <code>DOM object</code>.<br><br>
+                        Returns the numerical value associated with the <code>DOM object</code>, given its index or the object.<br><br>
 
                         <div style="display: flex; align-items: center;">
                             <span style="margin-right: auto;">Parameters:</span>        <span style="margin-left: auto;"><code>element : <i>Number or DOM element</i></code></span>
@@ -45,15 +45,25 @@
 
                     </li><br><br>
 
-                    <li><code><i>await</i> updateBox(elements, index)</code><br><br>
-                        Updates the visualization of the algorithm. Temporarily changes the color of the <code>DOM element</code> to red given its index and plays a sound if the index is specified.
-                        Call this function after every update in the elements array.<br><br>
+                    <li><code><i>await</i> updateBox(elements, [index1], [index2], [index3])</code><br><br>
+                        Updates the visualization of the algorithm. Temporarily changes the color of the <code>DOM elements</code> to red, green and blue respectively given their indexes and plays sounds if any index is specified.
+                        Call this function after every update to the elements array.<br><br>
                         <div style="display: flex; align-items: center;">
                             <span style="margin-right: auto;">Parameters:</span>        <span style="margin-left: auto;"><code>elements : <i>Array of DOM elements</i></code></span>
                         </div>
+
                         <div style="display: flex; align-items: center;">
-                                                                                        <span style="margin-left: auto;"><code>index : <i>Number</i></code></span>
+                                                                                        <span style="margin-left: auto;"><code>index1 : <i>Number</i></code></span>
+                        </div>
+
+                        <div style="display: flex; align-items: center;">
+                                                                                        <span style="margin-left: auto;"><code>index2 : <i>Number</i></code></span>
+                        </div>
+
+                        <div style="display: flex; align-items: center;">
+                                                                                        <span style="margin-left: auto;"><code>index3 : <i>Number</i></code></span>
                         </div><br>
+
                         <div style="display: flex; align-items: center;">
                             <span style="margin-right: auto;">Returns:</span>           <span style="margin-left: auto;"><code><i>undefined</i></code></span>
                         </div>

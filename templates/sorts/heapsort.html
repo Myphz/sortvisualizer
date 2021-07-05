@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/heapsort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/heapsort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,14 +9,14 @@ Heap Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Heap Sort is an in-place iterative sorting algorithm based on auxiliary data structures called heap.
 It's less efficient than algorithm with the same time complexity and it's not suitable for data structures with few elements.
 </p>
-<p data-aos="fade-right">
+<p>
 The heap is a data structure representable as a binary tree, where each node has a value bigger or equal to its children. Consequently, the root will hold the maximum value.
 </p>
-<p data-aos="fade-right">
+<p>
 The data structure gets ordered to form the heap initially, and then it gets progressively reordered with an algorithm similar to <a href="/selectionsort">Selection Sort</a>, starting from the bigger elements.
 </p>
 {% endblock %}

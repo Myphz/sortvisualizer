@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/mergesort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/mergesort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,12 +9,12 @@ Merge Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Merge Sort is a sorting algorithm based on the Divide et Impera technique, like <a href="/quicksort">Quick Sort</a>.
 It can be implemented iteratively or recursively, using the Top-Down and Bottom-Up algorithms respectively.
 We represented the first one.
 </p>
-<p data-aos="fade-right">
+<p>
 The algorithm divides the data structure recursively until the subsequences contain only one element.
 At this point, the subsequences get merged and ordered sequentially.
 To do so, the algorithm progressively builds the sorted sublist by adding each time the minimum element of the next two unsorted subsequences until there is only one sublist remaining.

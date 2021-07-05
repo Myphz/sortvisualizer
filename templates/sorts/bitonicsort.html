@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/bitonicsort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/bitonicsort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,14 +9,14 @@ Bitonic Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Bitonic Sort is a sorting algorithm based on comparisons. It exploits binary sequences, so it can be applied only on data structures with number of elements equal to a power of 2.
 </p>
-<p data-aos="fade-right">
+<p>
 The algorithm is made up of two parts. Initially, the data structure gets converted to a binary sequence, creating groups of ascending and descending elements linked together.
 Next, the groups get merged with an algorithm similar to <a href="/mergesort">Merge Sort</a> until the data structure is sorted.
 </p>
-<p data-aos="fade-right">
+<p>
 It can be implemented in numerous variants, iteratively or recursively, with different visualizations. This visualization shows an iterative version.
 </p>
 {% endblock %}

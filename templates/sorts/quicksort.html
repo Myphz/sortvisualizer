@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/quicksort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/quicksort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,15 +9,15 @@ Quick Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Quick Sort is a sorting algorithm based on splitting the data structure in smaller partitions and sort them recursively until the data structure is sorted.
 </p>
-<p data-aos="fade-right">
+<p>
 This division in partitions is done based on an element, called pivot:
 all the elements bigger than the pivot get placed on the right side of the structure, the smaller ones to the left, creating two partitions.
 Next, this procedure gets applied recursively to the two partitions and so on.
 </p>
-<p data-aos="fade-right">
+<p>
 This partition technique based on the pivot is called <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" target="_blank">Divide and conquer</a>.
 It's a performant strategy also used by other sorting algorithms, such as <a href="/mergesort">Merge Sort</a>.
 </p>

@@ -109,22 +109,21 @@ body {
     display: inline-block;
     color: white;
     margin-left: 0px;
-
     margin-right: 10px;
     margin-top: 35px;
     background: none;
     border: none;
     outline: none;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .sort-btns i {
+    overflow: hidden;
     border-radius: 7px;
     background-color: #272727;
     font-size: 70px !important;
@@ -414,7 +413,7 @@ body {
     border-radius: 5px;
 }
 
-#code-test > .CodeMirror {
+.CodeMirror {
     height: 70vh !important;
 }
 
@@ -422,24 +421,64 @@ body {
     height: 35px;
     width: 30vw;
     margin-left: 10px;
-    border-radius: 5px;
-    background-color: #151718;
+    border-radius: 3px;
+    background-color: #1c1c1c;
+    text-align: center;
     outline: none;
-    border: 1px solid #d17f3f;
+    border: none;
+    border-bottom: 1px solid #d17f3f;
     color: #c5d654;
+    font-family: monospace;
     font-size: 20px;
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .btn-code {
-    font-family: 'Jura', Courier, monospace;
-    font-size: 25px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 2px solid #ac6632;
-    background-color: #d17f3f;
-    vertical-align: middle;
+    font-family: 'Jura', monospace, Courier;
+    font-size: 30px;
+    padding: 0;
     float: right;
+    display: inline-flex;
+    background: #a8581b;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-weight: 500;
+    cursor: pointer;
+    height: 50px;
+}
+
+.btn-code:hover {
+    background-color: #8c4a16;
+}
+
+.btn-code:active {
+    background-color: #703b11;
+}
+
+.btn-text, .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    color: white;
+    height: 100%;
+}
+
+.btn-icon {
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+#btn-submit {
+    margin-top: 25px;
+    float: left;
+}
+
+.cm-s-seti .CodeMirror-matchingbracket {
+    color: #2B8A3D !important;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 #error {
@@ -447,11 +486,47 @@ body {
 }
 
 #error > .CodeMirror {
-    height: 30vh !important;
+    height: auto !important;
+    color: #700001 !important;
 }
 
-.cm-s-seti .CodeMirror-matchingbracket {
-    color: #2B8A3D !important;
-    text-decoration: none;
-    font-weight: 600;
+#error > .cm-s-seti span.cm-variable {
+    color: #700001 !important;
+}
+
+#error-title {
+    font-size: 32px;
+    color: #8f0104 !important;
+    opacity: 0;
+}
+
+#error-title i {
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 32px;
+    color: #8f0104 !important;
+}
+
+#success-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    background-color: #151718;
+    padding: 15px 25px 15px 25px;
+    border: 2px solid #d17f3f;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bolder;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 11;
+}
+
+.loading {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

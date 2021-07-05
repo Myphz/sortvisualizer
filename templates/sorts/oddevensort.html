@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/oddevensort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/oddevensort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,15 +9,15 @@ Odd Even Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Odd Even Sort (also known as Brick Sort) is a sorting in-place algorithm based on comparisons. It splits the data structure in pairs made up of elements with even indeces and
 odd indeces respectively.
 </p>
-<p data-aos="fade-right">
+<p>
 It compares adjacent pairs and swaps them if they are in the wrong order with an algorithm similar to <a href="/bubblesort">Bubble Sort</a>.
 This procedure continues for every pair, alternating between odd/even and even/odd pairs until the structure is sorted.
 </p>
-<p data-aos="fade-right">
+<p>
 This algorithm can get executed on paraller processors, but it's not widely used. It can be performant if the data structure is almost sorted, but it's really slow
 if there are small elements near the end of the data structure since they will require many iterations to get moved in the right place.
 </p>

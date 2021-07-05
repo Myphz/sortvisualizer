@@ -3,22 +3,22 @@
 <meta name="description" content="A visualization of 15+ sorting algorithms, including Quick Sort, Merge Sort, Selection Sort and more!">
 <meta name="robots" content="index, follow">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/index.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}" defer></script>
 {% endblock %}
 {% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
-<div id="header"><span>SORT</span><br><span>VISUALIZER</span></div>
+<div id="header"><span id="first-header">SORT</span><br><span id="second-header">VISUALIZER</span></div>
 <div id="cover">
     <div id="description-box">
-        <h2 style="font-family: 'Electrolize', Courier, monospace;" data-aos="fade-down">
+        <h2 style="font-family: 'Electrolize', Courier, monospace;">
             Sorting Algorithms
         </h2>
         <div class="description-content">
-            <p data-aos="fade-left">Sorting algorithms are used to sort a data structure according to a specific order relationship, such as numerical order or lexicographical order.</p>
-            <p data-aos="fade-right">
+            <p>Sorting algorithms are used to sort a data structure according to a specific order relationship, such as numerical order or lexicographical order.</p>
+            <p>
                 This operation is one of the most important and widespread in computer science.
                 For a long time, new methods have been developed to make this procedure faster and faster.
             </p>
-            <p data-aos="fade-left">
+            <p>
             There are currently hundreds of different sorting algorithms, each with its own specific characteristics.
             They are classified according to two metrics: space complexity and time complexity.<br><br>
             Those two kinds of complexity are represented with <a href="https://www.programiz.com/dsa/asymptotic-notations#:~:text=Asymptotic%20notations%20are%20the%20mathematical,linear%20i.e.%20the%20best%20case." target="_blank">asymptotic notations</a>, mainly with the symbols O, <span class="symbol">Θ</span>, <span class="symbol">Ω</span>, representing
@@ -27,23 +27,23 @@
             Most of them fall into two categories:
             </p>
             <ul>
-                <li data-aos="fade-right">Logarithmic<br>
+                <li>Logarithmic<br>
                     The complexity is proportional to the binary logarithm (i.e to the base 2) of <code><var>n</var></code>.<br>
                     An example of a logarithmic sorting algorithm is Quick sort, with space and time complexity O<code>(n × log n)</code>.<br><br>
                 </li>
-                <li data-aos="fade-left">Quadratic<br>
+                <li>Quadratic<br>
                     The complexity is proportional to the square of <code><var>n</var></code>.<br>
                     An example of a quadratic sorting algorithm is Bubble sort, with a time complexity of O<code>(n<sup>2</sup>)</code>.<br>
                 </li>
             </ul>
-            <p data-aos="fade-right">
+            <p>
                 Space and time complexity can also be further subdivided into 3 different cases: best case, average case and worst case.
             </p>
-            <p data-aos="fade-left">
+            <p>
                 Sorting algorithms can be difficult to understand and it's easy to get confused.
                 We believe visualizing sorting algorithms can be a great way to better understand their functioning while having fun!
             </p>
-            <button id="sort-btn" class="ripple-sort-btn">SORTS</button>
+            <button id="sort-btn" class="ripple-sort-btn open">SORTS</button>
         </div>
     </div>
 </div>

@@ -1,20 +1,16 @@
-window.addEventListener("load", () => {
-    document.getElementsByClassName("sidenav-btn")[0].addEventListener("click", openSidenav);
-
-    AOS.init({
-        duration: 1000,
-        once: true
-    });
+AOS.init({
+    duration: 1000,
+    once: true
 });
 
-function openSidenav() {
-    document.getElementsByClassName("sidenav")[0].classList.toggle("show");
+const byId = id => {
+    return document.getElementById(id);
 }
 
 window.onclick = function(event) {
-    const matches = ['#sort-btn', '.sidenav-btn', '.sidenav', '.sidenav-element', '.sidenav-title']
-
-    if (!(matches.some((match) => event.target.matches(match)))) {
-        document.getElementsByClassName("sidenav")[0].classList.remove("show");
+    if (event.target.matches(".open")) {
+        byId("sidenav").classList.toggle("show");
+    } else if (!(event.target.matches(".no-remove"))) {
+        byId("sidenav").classList.remove("show")
     }
 }

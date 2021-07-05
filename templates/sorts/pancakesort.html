@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/pancakesort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/pancakesort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,11 +9,11 @@ Pancake Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Pancake Sort is a sorting algorithm which derives from the pancake problem. The algorithm just executes the flip operation recursively until the data structure is sorted.
 It's similar to <a href="/selectionsort">Selection Sort</a>, without using swaps to sort the structure, but just flips.
 </p>
-<p data-aos="fade-right">
+<p>
 The data structure gets divided in two parts, a sorted one and one still to sort. For each flip, the maximum elements of the unsorted sublist gets put at the end of the data structure by
 flipping the unsorted part and the sorted sublist gets incremented by one. This procedure gets executed until the unsorted part is made up of just one element.
 </p>

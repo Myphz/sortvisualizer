@@ -16,8 +16,12 @@ window.addEventListener("load", () => {
     document.getElementById("audio").addEventListener("click", audioButton);
     updateAudioIcon();
 
-    let menu = document.getElementsByClassName("menu-btns")[0];
-    if (typeof menu === "undefined") return;
+    sleep(1432).then(() => {
+        if (!running) shuffle();
+    });
+
+    let menu = byId("menu-btns");
+    if (!menu) return;
     for (let i = 0; i < menu.children.length; i++) {
         menu.children[i].addEventListener("click", () => {
             loadCode(menu.children[i]);
@@ -26,17 +30,18 @@ window.addEventListener("load", () => {
     loadCode(menu.children[0]);
 });
 
+
 function sliderChange() {
     running = false;
-    let slider = document.getElementById("slider");
-    let sliderSpan = document.getElementById("slider-span");
+    let slider = byId("slider");
+    let sliderSpan = byId("slider-span");
     sliderSpan.innerHTML = slider.value;
     fillBox();
     activateButtons();
 }
 
-function fillBox(value=document.getElementById("slider").value) {
-    let box = document.getElementById("sort-container");
+function fillBox(value=byId("slider").value) {
+    let box = byId("sort-container");
     let size = 100 / value;
     clearBox(box);
 
@@ -82,6 +87,13 @@ async function swap(i, j, delay) {
     resetColor(j);
 }
 
+function isSorted(elements) {
+    for (let i = 1; i < elements.length; i++) {
+        if (!compare(i, i-1)) return false;
+    }
+    return true;
+}
+
 function sleep(delay) {
     return new Promise(resolve => {
         setTimeout(resolve, delay);
@@ -104,10 +116,7 @@ function playNote(frequency, duration) {
 }
 
 function getValue(i) {
-    if (typeof i === "object") {
-        return parseFloat(i.style.height.slice(0, -1))
-    }
-    return parseFloat(elements[i].style.height.slice(0, -1));
+    return typeof i === "object" ? parseFloat(i.style.height.slice(0, -1)) : parseFloat(elements[i].style.height.slice(0, -1));
 }
 
 function compare(x, y) {
@@ -130,7 +139,7 @@ function stop() {
 }
 
 function disableButtons() {
-    btn = document.getElementById("run-btn");
+    btn = byId("run-btn");
     btn.lastElementChild.innerHTML = 'stop'
     btn.onclick = stop;
     btn.disabled = false;
@@ -138,7 +147,7 @@ function disableButtons() {
 }
 
 function activateButtons() {
-    btn = document.getElementById("run-btn");
+    btn = byId("run-btn");
     btn.lastElementChild.innerHTML = 'play_arrow'
     btn.onclick = run;
     btn.disabled = false;
@@ -183,14 +192,14 @@ function calculateFreq(i) {
 
 function loadCode(btn) {
     let lang = btn.firstElementChild.title;
-    let menu = document.getElementsByClassName("menu-btns")[0];
+    let menu = byId("menu-btns");
 
     for (let i = 0; i < menu.children.length; i++) {
         menu.children[i].classList.remove("menu-btns-activated");
     }
 
     btn.classList.add("menu-btns-activated");
-    let code = document.getElementById("code");
+    let code = byId("code");
     code.innerHTML = codes[lang];
     code.className = '';
     code.classList.add(lang.toLowerCase())
@@ -198,7 +207,7 @@ function loadCode(btn) {
 }
 
 function audioButton() {
-    audio = document.getElementById("audio").firstElementChild.innerHTML === "volume_off" | 0;
+    audio = byId("audio").firstElementChild.innerHTML === "volume_off" | 0;
     updateAudioIcon();
 
     fetch("/audio/", {
@@ -208,5 +217,5 @@ function audioButton() {
 
 function updateAudioIcon() {
     let icons = ["volume_off", "volume_up"];
-    document.getElementById("audio").firstChild.innerHTML = icons[audio | 0];
+    byId("audio").firstChild.innerHTML = icons[audio | 0];
 }

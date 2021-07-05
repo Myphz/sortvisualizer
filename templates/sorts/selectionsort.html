@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/selectionsort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/selectionsort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,14 +9,14 @@ Selection Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Selection Sort is an iterative and in-place sorting algorithm that divides the data structure in two sublists: the ordered one, and the unordered one.
 The algorithm loops for all the elements of the data structure and for every cycle picks the smallest element of the unordered sublist and adds it to the sorted sublist, progressively filling it.
 </p>
-<p data-aos="fade-right">
+<p>
 It's a really simple and intuitive algorithm that does not require additional memory, but it's not really efficient on big data structures due to its quadratic time complexity.
 </p>
-<p data-aos="fade-right">
+<p>
 This algorithm has been upgraded and enhanced in several variants such as <a href="/heapsort">Heap Sort</a>.
 </p>
 {% endblock %}

@@ -3,17 +3,10 @@ async function run() {
 }
 
 async function bogoSort(arr) {
-    while (!sorted(arr)) {
+    while (!isSorted(arr)) {
         if (!running) return;
         await shuffleBogo(arr);
     }
-}
-
-function sorted(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        if (!compare(i, i-1)) return false;
-    }
-    return true;
 }
 
 async function shuffleBogo(arr) {

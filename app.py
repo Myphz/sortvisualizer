@@ -2,9 +2,9 @@ from flask import Flask, redirect, url_for, render_template, request, send_from_
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from telegram import Bot
-import requests
+from snippet import get_img
 import os
-from html import escape
+import requests
 
 app = Flask(__name__)
 app.secret_key = 'KEQING'
@@ -14,7 +14,7 @@ limiter = Limiter(app, key_func=get_remote_address)
 TELEGRAM_KEY = os.environ.get("TELEGRAM_KEY")
 CHAT_ID = -1001520685235
 
-# bot = Bot(TELEGRAM_KEY)
+bot = Bot(TELEGRAM_KEY)
 
 @app.route("/")
 def home():
@@ -39,13 +39,15 @@ def {fname}():
 @limiter.limit("5/hour")
 def submit():
     code = request.json["code"]
-    image = requests.post("https://carbonara.vercel.app/api/cook", json={"code": code, "theme": "one-dark"})
 
-    bot.send_photo(chat_id=CHAT_ID, photo=image.content, caption=r'<pre><code>{}</code></pre>'.format(escape(code)), parse_mode="html")
+    image = get_img(code)
+    req = requests.post('https://hastebin.com/documents', data=code)
+
+    bot.send_document(chat_id=CHAT_ID, document=image, filename="New Submission", caption=f'https://hastebin.com/{req.json()["key"]}')
 
     return "", 204
 
-@app.route("/api/")
+@app.route("/docs/")
 def api():
     return render_template("api.html")
 

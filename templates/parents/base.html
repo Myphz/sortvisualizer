@@ -14,6 +14,7 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -21,76 +22,78 @@
         <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/base.css') }}">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <noscript>JavaScript is required for this website. Please allow JavaScript and refresh the page.</noscript>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}" defer></script>
         {% block head %}
         {% endblock %}
     </head>
 
     <body>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
-        <div class="sidenav">
-            <a href="/" class="sidenav-title"><i class="material-icons icon">home</i> Home</a>
-            <div id="sep"></div>
-            <div class="sidenav-title"><i class="material-icons icon">sort</i> Sorts</div>
-            <div class="sidenav-subtitle">LOGARITHMIC</div>
-            <a href="/quicksort" class="sidenav-element">Quick Sort</a>
-            <a href="/mergesort" class="sidenav-element">Merge Sort</a>
-            <a href="/heapsort" class="sidenav-element">Heap Sort</a>
-            <div class="sidenav-subtitle">QUADRATIC</div>
-            <a href="/bubblesort" class="sidenav-element">Bubble Sort</a>
-            <a href="/selectionsort" class="sidenav-element">Selection Sort</a>
-            <a href="/insertionsort" class="sidenav-element">Insertion Sort</a>
-            <a href="/gnomesort" class="sidenav-element">Gnome Sort</a>
-            <a href="/shakersort" class="sidenav-element">Shaker Sort</a>
-            <a href="/oddevensort" class="sidenav-element">Odd Even Sort</a>
-            <a href="/pancakesort" class="sidenav-element">Pancake Sort</a>
-            <div class="sidenav-subtitle">WEIRD</div>
-            <a href="/bitonicsort" class="sidenav-element">Bitonic Sort</a>
-            <a href="/radixsort" class="sidenav-element">Radix Sort</a>
-            <a href="/shellsort" class="sidenav-element">Shell Sort</a>
-            <a href="/combsort" class="sidenav-element">Comb Sort</a>
-            <a href="/bogosort" class="sidenav-element">Bogo Sort</a>
-            <div class="sidenav-subtitle">CUSTOM</div>
-            <a href="/customsort" class="sidenav-element" style="margin-bottom: 40px;">Your Sort</a>
+        <div class="sidenav" id="sidenav">
+            <a href="/" class="sidenav-title no-remove"><i class="material-icons icon">home</i> Home</a>
+            <div id="sep" class="no-remove"></div>
+            <div class="sidenav-title no-remove"><i class="material-icons icon">sort</i> Sorts</div>
+            <div class="sidenav-subtitle no-remove">LOGARITHMIC</div>
+            <a href="/quicksort" class="sidenav-element no-remove">Quick Sort</a>
+            <a href="/mergesort" class="sidenav-element no-remove">Merge Sort</a>
+            <a href="/heapsort" class="sidenav-element no-remove">Heap Sort</a>
+            <div class="sidenav-subtitle no-remove">QUADRATIC</div>
+            <a href="/bubblesort" class="sidenav-element no-remove">Bubble Sort</a>
+            <a href="/selectionsort" class="sidenav-element no-remove">Selection Sort</a>
+            <a href="/insertionsort" class="sidenav-element no-remove">Insertion Sort</a>
+            <a href="/gnomesort" class="sidenav-element no-remove">Gnome Sort</a>
+            <a href="/shakersort" class="sidenav-element no-remove">Shaker Sort</a>
+            <a href="/oddevensort" class="sidenav-element no-remove">Odd Even Sort</a>
+            <a href="/pancakesort" class="sidenav-element no-remove">Pancake Sort</a>
+            <div class="sidenav-subtitle no-remove">WEIRD</div>
+            <a href="/bitonicsort" class="sidenav-element no-remove">Bitonic Sort</a>
+            <a href="/radixsort" class="sidenav-element no-remove">Radix Sort</a>
+            <a href="/shellsort" class="sidenav-element no-remove">Shell Sort</a>
+            <a href="/combsort" class="sidenav-element no-remove">Comb Sort</a>
+            <a href="/bogosort" class="sidenav-element no-remove">Bogo Sort</a>
+            <div class="sidenav-subtitle no-remove">CUSTOM</div>
+            <a href="/customsort" class="sidenav-element no-remove" style="margin-bottom: 40px;">Your Sort</a>
 
         </div>
 
         <div class="topnav">
-            <button class="sidenav-btn topnav-element ripple"><i class="material-icons icon">menu</i></button>
+            <button class="sidenav-btn topnav-element ripple open" id="sidenav-menu"><i class="material-icons icon">menu</i></button>
             <a href="/" class="topnav-element">SORT VISUALIZER</a>
             {% block audio %} {% endblock %}
         </div>
         {% block content %}
         {% endblock %}
 
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content" style="margin-left:0;">
+                    <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
+                    &emsp;Daniel Scanu<br>
+                    &emsp;Tommaso Tovoli<br>
+                    &emsp;Odd Elof Larsson
+                </div>
+                <div class="footer-content">
+                    <span class="footer-title">Contacts:</span><br>
+                    &emsp;danielscanu45@outlook.it<br>
+                    &emsp;tovoli.tommaso@gmail.com<br>
+                    &emsp;larsson.odd@gmail.com
+                </div>
+                <div class="footer-content">
+                    <span class="footer-title">Reference:</span><br>
+                    <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://github.com/Myphz/sortvisualizer" target="_blank">
+                        &emsp;<img src="{{url_for('static', filename='images/Github_icon.png')}}" title="GitHub" alt="github">
+                        <span style="padding-left: 5px;">GitHub</span>
+                    </a>
+
+                    <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                        &emsp;<img src="{{url_for('static', filename='images/Wikipedia_icon.png')}}" title="Wikipedia" alt="wikipedia">
+                        <span style="padding-left: 5px;">Wikipedia</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </body>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content" style="margin-left:0;">
-                <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
-                &emsp;Daniel Scanu<br>
-                &emsp;Tommaso Tovoli<br>
-                &emsp;Odd Elof Larsson
-            </div>
-            <div class="footer-content">
-                <span class="footer-title">Contacts:</span><br>
-                &emsp;danielscanu45@outlook.it<br>
-                &emsp;tovoli.tommaso@gmail.com<br>
-                &emsp;larsson.odd@gmail.com
-            </div>
-            <div class="footer-content">
-                <span class="footer-title">Reference:</span><br>
-                <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://github.com/Myphz/sortvisualizer" target="_blank">
-                    &emsp;<img src="{{url_for('static', filename='images/Github_icon.png')}}" title="GitHub" alt="github">
-                    <span style="padding-left: 5px;">GitHub</span>
-                </a>
-
-                <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
-                    &emsp;<img src="{{url_for('static', filename='images/Wikipedia_icon.png')}}" title="Wikipedia" alt="wikipedia">
-                    <span style="padding-left: 5px;">Wikipedia</span>
-                </a>
-            </div>
-        </div>
-    </footer>
-
 </html>

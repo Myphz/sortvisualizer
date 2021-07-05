@@ -1,7 +1,7 @@
 {% extends "parents/base_sort.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/gnomesort.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sorts/gnomesort.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}
@@ -9,11 +9,11 @@ Gnome Sort
 {% endblock %}
 
 {% block info %}
-<p data-aos="fade-right">
+<p>
 Gnome Sort is a sorting algorithm really similar to <a href="/insertionsort">Insertion sort</a>. Gnome Sort is based on dividing the data structure in two sublists: a sorted one, and an unsorted one.
 For every cycle, the algorithm picks an element of the unsorted sublist and moves it with sequential swaps to the right position in the sorted sublist.
 </p>
-<p data-aos="fade-right">
+<p>
 The main difference from the Insertion Sort is that the implementation doesn't require nested loops. Like the Insertion Sort, this algorithm is more efficient on small data structures almost sorted.
 </p>
 {% endblock %}

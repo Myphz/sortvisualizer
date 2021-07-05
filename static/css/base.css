@@ -10,26 +10,6 @@ body {
     color: black;
 }
 
-
-/* ::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    padding-right: 2px;
-    width: 5px;
-    display: none;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgb(59, 59, 59);
-    border-radius: 3px;
-}
-
-::-webkit-scrollbar-button {
-    display: none;
-} */
-
 .sidenav {
     display: block;
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -175,23 +155,19 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    font-family: 'Jura', Courier, monospace;
+    font-family: 'Jura', monospace, Courier;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* background: linear-gradient(45deg, rgba(0,0,0,1) 5%, rgba(59,59,59,1) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
     background: rgb(22, 22, 22);
     z-index: 5;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .topnav-element {
@@ -234,9 +210,9 @@ body {
 }
 
 .footer {
-    
+
     width: 100%;
-    font-family: 'Ubuntu', Courier, monospace;
+    font-family: 'Ubuntu', monospace, Courier;
     color:#afafaf;
     padding-top: 30px;
     padding-bottom: 15px;

@@ -5,9 +5,19 @@
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_sort.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/others/highlightjs.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_sort.css') }}">
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/base_sort.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/others/highlight.js') }}" defer></script>
+<script>
+    let audio = '{{ audio }}'[0] == "T" | 0;
+</script>
+
+{% block js %}
+{% endblock %}
+
 {% endblock %}
 
 {% block audio %}
@@ -15,15 +25,6 @@
 {% endblock %}
 
 {% block content %}
-
-<script type="text/javascript" src="{{ url_for('static', filename='js/base_sort.js') }}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
-<script>
-    let audio = '{{ audio }}'[0] == "T" | 0;
-</script>
-{% block js %}
-{% endblock %}
-
 <div>
     <div id="box">
         <div class="title" data-aos="fade-down">
@@ -33,7 +34,7 @@
             <button class="sort-btns" id="shuffle-btn" onclick="shuffle()"><i class="material-icons">shuffle</i></button>
             <button class="sort-btns" id="run-btn" onclick="run()" disabled><i class="material-icons">play_arrow</i></button>
             <div class="slider-container">
-                <div style="display: float; text-align: center;">
+                <div style="display: float; text-align: center; font-size: 30px;">
                     Elements: <span id="slider-span">100</span><br>
                 </div>
                 <input type="range" value="100" min="10" max="1000" step="5" name="item-num" id="slider" oninput="sliderChange()">
@@ -99,7 +100,7 @@
     <div class="menu-box">
         <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
         <div id="menu-code" data-aos="fade-right">
-            <div class="menu-btns">
+            <div class="menu-btns" id="menu-btns">
                 <button><img src="{{url_for('static', filename='images/c_icon.png')}}" width="32" height="32" title="C" alt="C"></button>
                 <button><img src="{{url_for('static', filename='images/cpp_icon.png')}}" width="32" height="32" title="C++" alt="C++"></button>
                 <button><img src="{{url_for('static', filename='images/java_icon.png')}}" width="32" height="32" title="Java" alt="Java"></button>
