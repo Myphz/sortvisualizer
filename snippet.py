@@ -22,11 +22,8 @@ def get_img(msg):
 
 	driver.execute_script("""
 	document.querySelector('section.controls').remove();
-	document.body.style.webkitTransform = 'scale(1.5)';
 	""")
 
-	sleep(3)
 	ret = driver.find_element_by_class_name("drag-control-points").screenshot_as_png
-	sleep(4)
 	driver.quit()
 	return ret
