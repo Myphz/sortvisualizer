@@ -2,10 +2,12 @@ from selenium import webdriver
 import base64
 import os
 
-PATH = os.environ.get("GECKODRIVER_PATH")
+GECKODRIVER_PATH = os.environ.get("GECKODRIVER_PATH")
+FIREFOX_PATH = os.environ.get("GECKODRIVER_PATH")
 
 def get_img(msg):
 	options = webdriver.FirefoxOptions()
+	options.binary_location = FIREFOX_PATH
 	options.add_argument('--headless')
 
 	driver = webdriver.Firefox(executable_path=PATH, options=options, service_log_path="/dev/null")
