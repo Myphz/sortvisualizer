@@ -38,13 +38,12 @@ body {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 90%;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .info {
@@ -67,33 +66,45 @@ body {
     color: white;
 }
 
+#elements-text {
+    display: float;
+    text-align: center;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 1100px) {
+    #elements-text {
+        font-size: 17px;
+    }
+}
+
 #slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none;
     appearance: none;
     max-width: 450px;
     width: 40vw;
-    height: 5px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
 }
 
 #slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
     border-radius: 0;
-    width: 10px; /* Set a specific slider handle width */
-    height: 30px; /* Slider handle height */
-    background: white; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 10px;
+    height: 30px;
+    background: white;
+    cursor: pointer;
     transition: 0.2s;
 }
 
 #slider::-moz-range-thumb {
     border-radius: 0;
-    width: 10px; /* Set a specific slider handle width */
-    height: 30px; /* Slider handle height */
-    background: white; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 10px;
+    height: 30px;
+    background: white;
+    cursor: pointer;
     transition: 0.2s;
 }
 
@@ -302,13 +313,12 @@ body {
 .menu-btns {
     width: 50%;
     height: 50px;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 @media only screen and (max-width: 1100px) {
