@@ -440,7 +440,7 @@ body {
 
 @media only screen and (max-width: 1100px) {
     #sort-entry-point-text {
-        font-size: 15px;
+        font-size: 12px;
     }
 }
 
@@ -462,8 +462,11 @@ body {
 
 @media only screen and (max-width: 1100px) {
     #entry-point {
-        height: 17px;
-        font-size: 12px;
+        margin-top: 5px;
+        margin-left: 5px;
+        height: 14px;
+        font-size: 10px;
+        width: 25vw;
     }
 }
 
@@ -507,16 +510,16 @@ body {
 
 @media only screen and (max-width: 1100px) {
     .btn-code {
-        font-size: 15px;
+        font-size: 12px;
         height: 25px;
     }
 
     .btn-text, .btn-icon {
-        padding: 0 12px;
+        padding: 0 7px;
     }
 
-    .btn-icon {
-        font-size: 22px;
+    .btn-icon i {
+        font-size: 18px !important;
     }
 }
 
