@@ -9,6 +9,6 @@
 	],
 	"short_name": "Sort Visualizer",
 	"name": "Sort Visualizer",
-	"start_url": ".",
+	"start_url": "..",
 	"display": "standalone"
 }
