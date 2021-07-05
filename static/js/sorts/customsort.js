@@ -1,4 +1,7 @@
-let run;
+let run = () => {
+    location.href = "#instructions";
+};
+
 let clicked = false;
 
 CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";

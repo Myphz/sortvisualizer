@@ -20,9 +20,7 @@ def get_img(msg):
 
 	driver.get(f"https://ray.so/?code={base64_string}&background=true&darkMode=true&colors=breeze&padding=64&title=Code&language=javascript")
 
-	driver.execute_script("""
-	document.querySelector('section.controls').remove();
-	""")
+	driver.execute_script("document.querySelector('section.controls').remove();")
 
 	ret = driver.find_element_by_class_name("drag-control-points").screenshot_as_png
 	driver.quit()
