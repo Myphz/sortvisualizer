@@ -10,7 +10,7 @@ def get_img(msg):
 	options.binary_location = FIREFOX_PATH
 	options.add_argument('--headless')
 
-	driver = webdriver.Firefox(executable_path=PATH, options=options, service_log_path="/dev/null")
+	driver = webdriver.Firefox(executable_path=GECKODRIVER_PATH, options=options, service_log_path="/dev/null")
 	driver.maximize_window()
 
 	base64_string = base64.b64encode(msg.encode("ascii"))

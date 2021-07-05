@@ -15,9 +15,6 @@
     let audio = '{{ audio }}'[0] == "T" | 0;
 </script>
 
-{% block js %}
-{% endblock %}
-
 {% endblock %}
 
 {% block audio %}
@@ -25,6 +22,8 @@
 {% endblock %}
 
 {% block content %}
+{% block js %}
+{% endblock %}
 <div>
     <div id="box">
         <div class="title" data-aos="fade-down">
