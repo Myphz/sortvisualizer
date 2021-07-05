@@ -1,18 +1,3 @@
-let run = () => {
-    location.href = "#sort-cover";
-};
-
-let clicked = false;
-
-CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
-CodeMirror.keyMap.default["Tab"] = "indentMore";
-
-byId("entry-point").onkeypress = function(e) {
-    var chr = String.fromCharCode(e.which);
-    if ("(-+* /)".indexOf(chr) >= 0)
-        return false;
-};
-
 class SortError extends Error {
   constructor(...params) {
     super(...params)
@@ -24,6 +9,22 @@ class SortError extends Error {
     this.name = 'SortError'
   }
 }
+
+let run = () => {
+    location.href = "#sort-cover";
+};
+
+let clicked = false;
+let submitted = false;
+
+CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
+CodeMirror.keyMap.default["Tab"] = "indentMore";
+
+byId("entry-point").onkeypress = function(e) {
+    var chr = String.fromCharCode(e.which);
+    if ("(-+* /)".indexOf(chr) >= 0)
+        return false;
+};
 
 async function updateBox(elements, index1, index2, index3) {
     if (!running) throw new SortError("Execution stopped.");
@@ -101,11 +102,18 @@ const editor = CodeMirror(document.getElementById("code-test"), {
     }
 });
 
+window.onbeforeunload = () => {
+    if (editor.getValue() === instructions || submitted) {
+        return undefined;
+    }
+
+    return "Are you sure you want to leave? Your algorithm implementation will be lost!";
+}
 
 window.addEventListener("load", () => {
     byId("btn-code").addEventListener("click", () => {
         let code = editor.getValue();
-        let entryPoint = document.getElementById("entry-point").value;
+        let entryPoint = byId("entry-point").value;
         injectSort(code, entryPoint);
     })
 
@@ -129,9 +137,11 @@ window.addEventListener("load", () => {
 
         }).then(async response => {
             if (response.ok) {
+                submitted = true;
                 text.innerHTML = "SUBMITTED";
                 icon.innerHTML = "<i class='material-icons'>check</i>";
             } else {
+                submitted = false;
                 byId("success-text").innerHTML = "An error occured.<br>Please try again later."
                 text.innerHTML = "ERROR";
                 icon.innerHTML = "<i class='material-icons'>close</i>";
@@ -173,7 +183,6 @@ function injectSort(code, entryPoint) {
             byId("btn-submit-icon").innerHTML = "<i class='material-icons'>file_upload</i>";
 
             if (!startSorted && afterSorted && code != instructions && entryPoint != "selectionSort") byId("success-popup").style.opacity = 1;
-            // if (!startSorted && afterSorted) successPopup.style.opacity = 1;
             sleep(5000).then(
                 () => {
                     if (!clicked) successPopup.style.opacity = 0;
@@ -201,5 +210,5 @@ function injectSort(code, entryPoint) {
         runBtn(customSort, elements);
     }
 
-    document.getElementById("run-btn").onclick = run;
+    byId("run-btn").onclick = run;
 }

@@ -14,7 +14,7 @@ limiter = Limiter(app, key_func=get_remote_address)
 TELEGRAM_KEY = os.environ.get("TELEGRAM_KEY")
 CHAT_ID = -1001520685235
 
-# bot = Bot(TELEGRAM_KEY)
+bot = Bot(TELEGRAM_KEY)
 
 @app.route("/")
 def home():

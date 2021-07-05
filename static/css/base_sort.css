@@ -67,7 +67,6 @@ body {
 }
 
 #elements-text {
-    display: float;
     text-align: center;
     font-size: 25px;
 }
@@ -226,7 +225,7 @@ body {
 
 .sort-description {
     font-size: 28px;
-    margin-left: 7%;
+    margin-left: 5%;
     float: left;
     max-width: 50%;
     text-align: justify;
@@ -236,7 +235,6 @@ body {
     .sort-description {
         max-width: 90%;
         font-size: 17px;
-        margin-left: 5%;
     }
 }
 
@@ -286,7 +284,7 @@ body {
 
 .menu-box {
     margin-top: 80px;
-    margin-left: 7%;
+    margin-left: 5%;
     margin-bottom: 50px;
     color: white;
 }
@@ -417,14 +415,33 @@ body {
 }
 
 #code-test {
-    width: 70vw;
+    width: 90%;
+    font-size: 25px;
     border: 2px solid #A86836;
     margin-top: 35px;
     border-radius: 5px;
 }
 
+@media only screen and (max-width: 1100px) {
+    #code-test {
+        font-size: 12px;
+    }
+}
+
 .CodeMirror {
     height: 70vh !important;
+}
+
+#sort-entry-point-text {
+    font-size: 30px;
+    font-family: 'Jura', monospace, Courier;
+    color: #d17f3f;
+}
+
+@media only screen and (max-width: 1100px) {
+    #sort-entry-point-text {
+        font-size: 15px;
+    }
 }
 
 #entry-point {
@@ -443,11 +460,19 @@ body {
     vertical-align: middle;
 }
 
+@media only screen and (max-width: 1100px) {
+    #entry-point {
+        height: 17px;
+        font-size: 12px;
+    }
+}
+
 .btn-code {
     font-family: 'Jura', monospace, Courier;
     font-size: 30px;
     padding: 0;
     float: right;
+    margin-top: 5px;
     display: inline-flex;
     background: #a8581b;
     border: none;
@@ -476,8 +501,23 @@ body {
 }
 
 .btn-icon {
-    font-size: 1.5em;
+    font-size: 45px;
     background-color: rgba(0, 0, 0, 0.08);
+}
+
+@media only screen and (max-width: 1100px) {
+    .btn-code {
+        font-size: 15px;
+        height: 25px;
+    }
+
+    .btn-text, .btn-icon {
+        padding: 0 12px;
+    }
+
+    .btn-icon {
+        font-size: 22px;
+    }
 }
 
 #btn-submit {
