@@ -1,6 +1,7 @@
 from selenium import webdriver
 import base64
 import os
+from time import sleep
 
 GECKODRIVER_PATH = os.environ.get("GECKODRIVER_PATH")
 FIREFOX_PATH = os.environ.get("FIREFOX_PATH")
@@ -23,6 +24,7 @@ def get_img(msg):
 	document.body.style.webkitTransform = 'scale(1.5)';
 	""")
 
+	sleep(.5)
 	ret = driver.find_element_by_class_name("drag-control-points").screenshot_as_png
 	driver.quit()
 	return ret
