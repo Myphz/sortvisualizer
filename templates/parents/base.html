@@ -25,13 +25,13 @@
 
         <noscript>JavaScript is required for this website. Please allow JavaScript and refresh the page.</noscript>
 
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
         {% block head %}
         {% endblock %}
     </head>
 
     <body>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
         <div class="sidenav" id="sidenav">
             <a href="/" class="sidenav-title no-remove"><i class="material-icons icon">home</i> Home</a>
             <div id="sep" class="no-remove"></div>
