@@ -1,0 +1,14 @@
+{
+	"manifest_version": 2,
+	"version": "0.01",
+	"short_name": "Sort Visualizer",
+	"name": "Sort Visualizer",
+	"icons": [
+		{
+			"src": "/static/images/favicon.ico",
+			"sizes": "48x48"
+		},
+	],
+	"start_url": ".",
+	"display": "standalone",
+}
