@@ -23,6 +23,6 @@ def get_img(msg):
 	document.body.style.webkitTransform = 'scale(1.5)';
 	""")
 
-	ret = driver.find_element_by_xpath("/html/body/div/main/div[2]/div/div[1]").screenshot_as_png
+	ret = driver.find_element_by_class_name("drag-control-points").screenshot_as_png
 	driver.quit()
 	return ret
