@@ -23,6 +23,6 @@ In the website you can find information and implementations in multiple programm
 It's also possible to design and visualize *your own sorting algorithm*, using the using the [documented APIs](https://www.sortvisualizer.com/docs). Have fun messing around and trying new stuff!
 
 ## Notes
-This website has been made using purely vanilla JS, HTML and CSS. No frameworks involved.
+This website has been made using purely vanilla JS, HTML, CSS and Flask.
 Feedback and contributions are appreciated!
 Consider adding a :star: to this repository to support the project!
