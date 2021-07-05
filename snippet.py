@@ -3,15 +3,16 @@ import base64
 import os
 from time import sleep
 
-GECKODRIVER_PATH = os.environ.get("GECKODRIVER_PATH")
-FIREFOX_PATH = os.environ.get("FIREFOX_PATH")
-
 def get_img(msg):
-	options = webdriver.FirefoxOptions()
-	options.binary_location = FIREFOX_PATH
-	options.add_argument('--headless')
+	chrome_options = webdriver.ChromeOptions()
 
-	driver = webdriver.Firefox(executable_path=GECKODRIVER_PATH, options=options, service_log_path="/dev/null")
+	chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+	chrome_options.add_argument('--disable-dev-shm-usage')
+	chrome_options.add_argument('--no-sandbox')
+	chrome_options.add_argument("--headless")
+	chrome_options.add_argument('window-size=2560x1440')
+	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
 	driver.maximize_window()
 
 	base64_string = base64.b64encode(msg.encode("ascii"))
