@@ -1,5 +1,5 @@
 let run = () => {
-    location.href = "#instructions";
+    location.href = "#sort-cover";
 };
 
 let clicked = false;
