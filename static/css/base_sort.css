@@ -575,6 +575,11 @@ body {
     z-index: 11;
 }
 
+@media only screen and (max-width: 1100px) {
+    #success-popup {
+        font-size: 13px;
+    }
+
 .loading {
     animation: spin 2s linear infinite;
 }
