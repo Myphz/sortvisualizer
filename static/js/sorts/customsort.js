@@ -151,6 +151,7 @@ window.addEventListener("load", () => {
             await sleep(3000);
             clicked = false;
             byId("success-popup").style.opacity = 0;
+            submit.style.cursor = "default";
             submit.disabled = false;
         });
 
@@ -182,7 +183,11 @@ function injectSort(code, entryPoint) {
             byId("btn-submit-text").innerHTML = "SUBMIT";
             byId("btn-submit-icon").innerHTML = "<i class='material-icons'>file_upload</i>";
 
-            if (!startSorted && afterSorted && code != instructions && entryPoint != "selectionSort") byId("success-popup").style.opacity = 1;
+            if (!startSorted && afterSorted && code != instructions && entryPoint != "selectionSort") {
+                byId("success-popup").style.opacity = 1;
+                byId("btn-submit").style.cursor = "pointer";
+                byId("btn-submit").disabled = false;
+            }
             sleep(5000).then(
                 () => {
                     if (!clicked) successPopup.style.opacity = 0;
