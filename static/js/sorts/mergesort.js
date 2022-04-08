@@ -1,41 +1,40 @@
 async function run() {
-    runBtn(mergeSort, elements, 0, elements.length);
+  runBtn(mergeSort, elements, 0, elements.length);
 }
 
 async function mergeSort(arr, start, end) {
-    if (start >= end-1) return;
-    var mid = start + ~~((end-start)/2);
+  if (start >= end - 1) return;
+  var mid = start + ~~((end - start) / 2);
 
-    await mergeSort(arr, start, mid);
-    await mergeSort(arr, mid, end);
+  await mergeSort(arr, start, mid);
+  await mergeSort(arr, mid, end);
 
-    var cache = Array(end-start).fill(arr[0]);
-    var k=mid;
+  var cache = Array(end - start).fill(arr[0]);
+  var k = mid;
 
-    for (var i=start, r=0;i<mid;r++,i++) {
-        if (!running) return;
-        while (k<end && getValue(arr[k]) < getValue(arr[i])) {
-            cache[r] = arr[k];
-            r++;
-            k++;
-        }
-        cache[r] = arr[i];
-
+  for (var i = start, r = 0; i < mid; r++, i++) {
+    if (!running) return;
+    while (k < end && getValue(arr[k]) < getValue(arr[i])) {
+      cache[r] = arr[k];
+      r++;
+      k++;
     }
+    cache[r] = arr[i];
+  }
 
-    for (var i=0;i<k-start;i++) {
-        if (!running) return;
-        arr[i+start]=cache[i];
-        arr[i+start].style.left = 100 / elements.length * (i+start) + "%";
-        changeColor(i+start, RED);
-        playNote(calculateFreq(i+start), NOTE_DURATION);
-        await sleep(SORT_DELAY/elements.length);
-        resetColor(i+start);
-    }
+  for (var i = 0; i < k - start; i++) {
+    if (!running) return;
+    arr[i + start] = cache[i];
+    arr[i + start].style.left = (100 / elements.length) * (i + start) + "%";
+    changeColor(i + start, RED);
+    playNote(calculateFreq(i + start), NOTE_DURATION);
+    await sleep(SORT_DELAY / elements.length);
+    resetColor(i + start);
+  }
 }
 
 var codes = {
-    "C": `
+  C: `
 void merge(int arr[], int l, int m, int r)
 {
     int i, j, k;
@@ -89,14 +88,7 @@ void mergeSort(int arr[], int l, int r)
     }
 }`,
 
-    "C++": `
-void swapping(int &a, int &b) {
-   int temp;
-   temp = a;
-   a = b;
-   b = temp;
-}
-
+  "C++": `
 void merge(int *array, int l, int m, int r) {
    int i, j, k, nl, nr;
    nl = m-l+1; nr = r-m;
@@ -141,7 +133,7 @@ void mergeSort(int *array, int l, int r) {
    }
 }`,
 
-    "Java": `
+  Java: `
 void merge(int arr[], int l, int m, int r)
 {
     int n1 = m - l + 1;
@@ -194,7 +186,7 @@ void sort(int arr[], int l, int r)
         merge(arr, l, m, r);
     }
 }`,
-    "JavaScript": `
+  JavaScript: `
 function mergeSort(array) {
   const half = array.length / 2
 
@@ -219,7 +211,7 @@ function merge(left, right) {
 
     return [ ...arr, ...left, ...right ]
 }`,
-    "Python": `
+  Python: `
 def mergeSort(arr):
     if len(arr) > 1:
         mid = len(arr)//2
@@ -248,5 +240,5 @@ def mergeSort(arr):
         while j < len(R):
             arr[k] = R[j]
             j += 1
-            k += 1`
-}
+            k += 1`,
+};
