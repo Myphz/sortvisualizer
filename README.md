@@ -21,7 +21,7 @@ In the website you can find information and implementations in multiple programm
 - Bogo Sort
 
 ## Custom Sort
-It's also possible to design and visualize *your own sorting algorithm*, using the using the [documented APIs](https://www.sortvisualizer.com/docs). Have fun messing around and trying new stuff!
+It's also possible to design and visualize *your own sorting algorithm*, using the [documented APIs](https://www.sortvisualizer.com/docs). Have fun messing around and trying new stuff!
 
 ## Notes
 This website has been made using purely vanilla JS, HTML, CSS and Flask.
