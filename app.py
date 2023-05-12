@@ -9,12 +9,16 @@ import requests
 app = Flask(__name__)
 app.secret_key = 'KEQING'
 
-limiter = Limiter(app, key_func=get_remote_address)
+limiter = Limiter(get_remote_address, app=app)
 
 TELEGRAM_KEY = os.environ.get("TELEGRAM_KEY")
 CHAT_ID = -1001520685235
 
-bot = Bot(TELEGRAM_KEY)
+bot = None
+try:
+    bot = Bot(TELEGRAM_KEY)
+except Exception as e:
+    print("Telegram bot couldn't start", e)
 
 @app.route("/")
 def home():
@@ -43,7 +47,7 @@ def submit():
     image = get_img(code)
     req = requests.post('https://hastebin.com/documents', data=code)
 
-    bot.send_document(chat_id=CHAT_ID, document=image, filename="New Submission", caption=f'https://hastebin.com/{req.json()["key"]}')
+    if bot: bot.send_document(chat_id=CHAT_ID, document=image, filename="New Submission", caption=f'https://hastebin.com/{req.json()["key"]}')
 
     return "", 204
 
