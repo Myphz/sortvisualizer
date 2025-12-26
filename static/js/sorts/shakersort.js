@@ -47,22 +47,19 @@ void CocktailSort(int a[], int n) {
 
         for (int i = start; i < end; ++i) {
             if (a[i] > a[i + 1]) {
-                swap(a[i], a[i + 1]);
+                swap(&a[i], &a[i + 1]);
                 swapped = 1;
             }
         }
 
-        if (!swapped)
-            break;
+        if (!swapped) break;
 
         swapped = 0;
-
         --end;
 
-        for (int i = end - 1; i >= start; --i)
-        {
-            if (a[i] > a[i + 1]) {
-                swap(a[i], a[i + 1]);
+        for (int i = end; i > start; --i) {
+            if (a[i - 1] > a[i]) {
+                swap(&a[i - 1], &a[i]);
                 swapped = 1;
             }
         }
@@ -87,22 +84,19 @@ void CocktailSort(int a[], int n) {
 
         for (int i = start; i < end; ++i) {
             if (a[i] > a[i + 1]) {
-                swap(a[i], a[i + 1]);
+                swap(&a[i], &a[i + 1]);
                 swapped = true;
             }
         }
 
-        if (!swapped)
-            break;
+        if (!swapped) break;
 
         swapped = false;
-
         --end;
 
-        for (int i = end - 1; i >= start; --i)
-        {
-            if (a[i] > a[i + 1]) {
-                swap(a[i], a[i + 1]);
+        for (int i = end; i > start; --i) {
+            if (a[i - 1] > a[i]) {
+                swap(&a[i - 1], &a[i]);
                 swapped = true;
             }
         }
@@ -111,16 +105,15 @@ void CocktailSort(int a[], int n) {
     }
 }`,
     "Java": `
-void cocktailSort(int a[])
-{
+void cocktailSort(int[] a) {
     boolean swapped = true;
     int start = 0;
-    int end = a.length;
+    int end = a.length - 1;
 
-    while (swapped == true) {
+    while (swapped) {
         swapped = false;
 
-        for (int i = start; i < end - 1; ++i) {
+        for (int i = start; i < end; i++) {
             if (a[i] > a[i + 1]) {
                 int temp = a[i];
                 a[i] = a[i + 1];
@@ -129,53 +122,57 @@ void cocktailSort(int a[])
             }
         }
 
-        if (swapped == false)
-            break;
+        if (!swapped) break;
+
         swapped = false;
+        end--;
 
-        end = end - 1;
-
-        for (int i = end - 1; i >= start; i--) {
-            if (a[i] > a[i + 1]) {
+        for (int i = end; i > start; i--) {
+            if (a[i - 1] > a[i]) {
                 int temp = a[i];
-                a[i] = a[i + 1];
-                a[i + 1] = temp;
+                a[i] = a[i - 1];
+                a[i - 1] = temp;
                 swapped = true;
             }
         }
 
-        start = start + 1;
+        start++;
     }
 }`,
     "JavaScript": `
 function cocktailShakerSort(nums) {
+  let swapped = true;
+  let start = 0;
+  let end = nums.length - 1;
 
-    let is_Sorted = true;
-    while (is_Sorted) {
-        for (let i = 0; i< nums.length - 1; i++) {
-            if (nums[i] > nums[i + 1]) {
-                let temp = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i+1] = temp;
-                is_Sorted = true;
-            }
-        }
+  while (swapped) {
+    swapped = false;
 
-        if (!is_Sorted)
-            break;
-
-        is_Sorted = false;
-
-        for (let j = nums.length - 1; j > 0; j--) {
-            if (nums[j-1] > nums[j]) {
-                let temp = nums[j];
-                nums[j] = nums[j - 1];
-                nums[j - 1] = temp;
-                is_Sorted = true;
-            }
-        }
+    for (let i = start; i < end; i++) {
+      if (nums[i] > nums[i + 1]) {
+        [nums[i], nums[i + 1]] = [nums[i + 1], nums[i]];
+        swapped = true;
+      }
     }
-}`,
+
+    if (!swapped) break;
+
+    swapped = false;
+    end--;
+
+    for (let i = end; i > start; i--) {
+      if (nums[i - 1] > nums[i]) {
+        [nums[i - 1], nums[i]] = [nums[i], nums[i - 1]];
+        swapped = true;
+      }
+    }
+
+    start++;
+  }
+
+  return nums;
+}
+`,
     "Python": `
 def cocktailSort(a):
     n = len(a)
